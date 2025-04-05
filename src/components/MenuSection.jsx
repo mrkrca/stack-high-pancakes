@@ -1,0 +1,101 @@
+
+import React, { useState, useEffect } from 'react';
+import { menuCategories, menuItems } from '../data/menuData';
+
+const MenuSection = () => {
+  const [activeCategory, setActiveCategory] = useState('pancakes');
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  useEffect(() => {
+    setFilteredItems(menuItems.filter(item => item.category === activeCategory));
+  }, [activeCategory]);
+
+  return (
+    <section id="menu" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-syrup-800 mb-4">Our Breakfast Menu</h2>
+          <p className="text-syrup-600 max-w-2xl mx-auto">
+            All our dishes are made fresh to order with locally sourced ingredients. 
+            Gluten-free options available upon request.
+          </p>
+        </div>
+        
+        {/* Menu Categories Navigation */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+          {menuCategories.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-4 py-2 rounded-full transition-colors ${
+                activeCategory === category.id
+                  ? 'bg-pancake-500 text-white'
+                  : 'bg-muted hover:bg-pancake-200 text-syrup-700'
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+        
+        {/* Category Description */}
+        <div className="text-center mb-8">
+          <h3 className="text-xl font-bold text-syrup-700 mb-2">
+            {menuCategories.find(cat => cat.id === activeCategory)?.name}
+          </h3>
+          <p className="text-syrup-500">
+            {menuCategories.find(cat => cat.id === activeCategory)?.description}
+          </p>
+        </div>
+        
+        {/* Menu Items Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredItems.map(item => (
+            <div key={item.id} className="menu-item group">
+              {/* Item Tags */}
+              {item.tags && item.tags.map(tag => (
+                <span 
+                  key={tag}
+                  className="menu-item-tag bg-pancake-500 text-white"
+                >
+                  {tag}
+                </span>
+              ))}
+              
+              {/* Vegetarian Tag */}
+              {item.isVegetarian && (
+                <span className="menu-item-tag bg-green-100 text-green-800 ml-2">
+                  Vegetarian
+                </span>
+              )}
+              
+              <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
+                <img
+                  src={item.image || '/placeholder.svg'}
+                  alt={item.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              
+              <div>
+                <div className="flex justify-between items-start mb-2">
+                  <h4 className="text-lg font-bold text-syrup-800">{item.name}</h4>
+                  <span className="font-bold text-pancake-600">${item.price.toFixed(2)}</span>
+                </div>
+                <p className="text-syrup-600 text-sm">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <button className="btn-primary">
+            Order Online Now
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MenuSection;
