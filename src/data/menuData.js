@@ -40,7 +40,7 @@ export const menuItems = [
     price: 9.99,
     category: 'pancakes',
     tags: ['Bestseller'],
-    image: '/images/buttermilk-pancakes.jpg',
+    image: '/images/pancake-stack.jpg',
     isVegetarian: true
   },
   {
@@ -49,7 +49,7 @@ export const menuItems = [
     description: 'Fresh blueberries folded into our buttermilk batter. Topped with blueberry compote.',
     price: 11.99,
     category: 'pancakes',
-    image: '/images/blueberry-pancakes.jpg',
+    image: '/images/pancake-stack.jpg',
     isVegetarian: true
   },
   {
@@ -59,7 +59,7 @@ export const menuItems = [
     price: 11.99,
     category: 'pancakes',
     tags: ['Kids Favorite'],
-    image: '/images/chocolate-pancakes.jpg',
+    image: '/images/pancake-stack.jpg',
     isVegetarian: true
   },
   {
@@ -68,7 +68,7 @@ export const menuItems = [
     description: 'Fresh bananas and toasted pecans folded into our batter. Topped with caramel sauce.',
     price: 12.99,
     category: 'pancakes',
-    image: '/images/banana-pancakes.jpg',
+    image: '/images/pancake-stack.jpg',
     isVegetarian: true
   },
   {
@@ -77,7 +77,7 @@ export const menuItems = [
     description: 'Golden crisp outside, light and fluffy inside. Served with maple syrup and powdered sugar.',
     price: 10.99,
     category: 'waffles',
-    image: '/images/belgian-waffle.jpg',
+    image: '/images/waffle.jpg',
     isVegetarian: true
   },
   {
@@ -87,7 +87,7 @@ export const menuItems = [
     price: 12.99,
     category: 'waffles',
     tags: ['Seasonal'],
-    image: '/images/strawberry-waffle.jpg',
+    image: '/images/waffle.jpg',
     isVegetarian: true
   },
   {
@@ -97,7 +97,7 @@ export const menuItems = [
     price: 15.99,
     category: 'waffles',
     tags: ['Bestseller'],
-    image: '/images/chicken-waffles.jpg'
+    image: '/images/waffle.jpg'
   },
   {
     id: 8,
@@ -114,7 +114,7 @@ export const menuItems = [
     description: 'Brioche filled with cream cheese and strawberry preserves. Topped with fresh berries.',
     price: 13.99,
     category: 'french-toast',
-    image: '/images/stuffed-french-toast.jpg',
+    image: '/images/french-toast.jpg',
     isVegetarian: true
   },
   {
@@ -123,7 +123,7 @@ export const menuItems = [
     description: 'Farm-fresh eggs cooked your way. Served with toast and hash browns.',
     price: 8.99,
     category: 'eggs',
-    image: '/images/two-eggs.jpg'
+    image: '/images/breakfast-plate.jpg'
   },
   {
     id: 11,
@@ -131,7 +131,7 @@ export const menuItems = [
     description: 'Ham, bell peppers, onions, and cheddar cheese. Served with hash browns and toast.',
     price: 12.99,
     category: 'eggs',
-    image: '/images/denver-omelette.jpg'
+    image: '/images/breakfast-plate.jpg'
   },
   {
     id: 12,
@@ -139,7 +139,7 @@ export const menuItems = [
     description: 'Spinach, tomatoes, mushrooms, and Swiss cheese. Served with hash browns and toast.',
     price: 11.99,
     category: 'eggs',
-    image: '/images/veggie-omelette.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   },
   {
@@ -148,7 +148,7 @@ export const menuItems = [
     description: 'Four strips of premium bacon.',
     price: 3.99,
     category: 'sides',
-    image: '/images/bacon.jpg'
+    image: '/images/breakfast-plate.jpg'
   },
   {
     id: 14,
@@ -156,7 +156,7 @@ export const menuItems = [
     description: 'Four savory breakfast sausage links.',
     price: 3.99,
     category: 'sides',
-    image: '/images/sausage.jpg'
+    image: '/images/breakfast-plate.jpg'
   },
   {
     id: 15,
@@ -164,7 +164,7 @@ export const menuItems = [
     description: 'Crispy shredded potatoes.',
     price: 3.49,
     category: 'sides',
-    image: '/images/hash-browns.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   },
   {
@@ -173,7 +173,7 @@ export const menuItems = [
     description: 'Seasonal fresh fruits.',
     price: 4.99,
     category: 'sides',
-    image: '/images/fruit-bowl.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   },
   {
@@ -182,7 +182,7 @@ export const menuItems = [
     description: 'Locally roasted, bottomless cup.',
     price: 2.99,
     category: 'beverages',
-    image: '/images/coffee.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   },
   {
@@ -191,7 +191,7 @@ export const menuItems = [
     description: 'Freshly squeezed.',
     price: 3.99,
     category: 'beverages',
-    image: '/images/orange-juice.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   },
   {
@@ -200,7 +200,7 @@ export const menuItems = [
     description: 'Cold and refreshing.',
     price: 2.49,
     category: 'beverages',
-    image: '/images/milk.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   },
   {
@@ -209,7 +209,7 @@ export const menuItems = [
     description: 'Rich and creamy with whipped cream.',
     price: 3.49,
     category: 'beverages',
-    image: '/images/hot-chocolate.jpg',
+    image: '/images/breakfast-plate.jpg',
     isVegetarian: true
   }
 ];

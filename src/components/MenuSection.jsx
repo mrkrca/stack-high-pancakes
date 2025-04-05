@@ -51,33 +51,35 @@ const MenuSection = () => {
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map(item => (
-            <div key={item.id} className="menu-item group">
+            <div key={item.id} className="group bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               {/* Item Tags */}
-              {item.tags && item.tags.map(tag => (
-                <span 
-                  key={tag}
-                  className="menu-item-tag bg-pancake-500 text-white"
-                >
-                  {tag}
-                </span>
-              ))}
-              
-              {/* Vegetarian Tag */}
-              {item.isVegetarian && (
-                <span className="menu-item-tag bg-green-100 text-green-800 ml-2">
-                  Vegetarian
-                </span>
-              )}
-              
-              <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
-                <img
-                  src={item.image || '/placeholder.svg'}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative">
+                {item.tags && item.tags.map(tag => (
+                  <span 
+                    key={tag}
+                    className="absolute top-2 left-2 bg-pancake-500 text-white text-xs px-2 py-1 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+                
+                {/* Vegetarian Tag */}
+                {item.isVegetarian && (
+                  <span className="absolute top-2 right-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                    Vegetarian
+                  </span>
+                )}
+                
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={item.image || '/placeholder.svg'}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
               </div>
               
-              <div>
+              <div className="p-4">
                 <div className="flex justify-between items-start mb-2">
                   <h4 className="text-lg font-bold text-syrup-800">{item.name}</h4>
                   <span className="font-bold text-pancake-600">${item.price.toFixed(2)}</span>
@@ -89,7 +91,7 @@ const MenuSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="btn-primary">
+          <button className="bg-pancake-500 text-white hover:bg-pancake-600 px-8 py-3 rounded-md font-semibold transition-colors">
             Order Online Now
           </button>
         </div>

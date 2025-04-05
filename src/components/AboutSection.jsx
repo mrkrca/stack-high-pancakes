@@ -44,14 +44,14 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-lg transform translate-y-6">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/images/pancake-stack.jpg" 
                   alt="Pancakes being prepared" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/images/french-toast.jpg" 
                   alt="Restaurant interior" 
                   className="w-full h-full object-cover"
                 />
@@ -60,14 +60,14 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/images/waffle.jpg" 
                   alt="Stack of pancakes" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg transform translate-y-6">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/images/breakfast-plate.jpg" 
                   alt="Happy customers" 
                   className="w-full h-full object-cover"
                 />

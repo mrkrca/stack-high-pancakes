@@ -23,7 +23,7 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <button className="btn-primary text-lg py-3 px-8">
+          <button className="bg-pancake-500 text-white hover:bg-pancake-600 px-8 py-3 rounded-md font-semibold transition-colors">
             Order Online
           </button>
           <button 
