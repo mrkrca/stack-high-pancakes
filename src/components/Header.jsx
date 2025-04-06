@@ -22,15 +22,14 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <a href="/" className="flex items-center">
+         
+          
             <img 
-              src="/placeholder.svg" 
+              src="/images/logo.png" 
               alt="OC Pancakes Logo" 
-              className="h-12 w-auto mr-3" 
+              className="w-32 h-auto" 
             />
-            <div>
-              <h1 className="text-2xl font-bold text-syrup-700">OC Pancakes</h1>
-              <p className="text-xs text-syrup-500">Breakfast Paradise Since 1985</p>
-            </div>
+            
           </a>
           
           {/* Desktop Navigation */}

@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Restaurant background image */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/48c068b7-8143-46f0-89c3-66e9b09536af.png" 
+          src="/images/backgroundImg.jpg" 
           alt="Stack High Pancakes Restaurant" 
           className="w-full h-full object-cover"
         />
@@ -32,9 +32,10 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <button className="bg-pancake-500 text-white hover:bg-pancake-600 px-8 py-3 rounded-md font-semibold transition-colors">
-            Order Online
-          </button>
+
+
+
+
           <button 
             onClick={scrollToMenu}
             className="bg-white text-syrup-700 hover:bg-syrup-50 border border-syrup-200 px-8 py-3 rounded-md font-semibold transition-colors"
@@ -62,7 +63,7 @@ const Hero = () => {
               </svg>
             </div>
             <span className="text-white font-medium drop-shadow-md">Location</span>
-            <span className="text-white/90 text-sm drop-shadow-sm">Orange County, CA</span>
+            <span className="text-white/90 text-sm drop-shadow-sm">Ocean City, MD</span>
           </div>
           
           <div className="flex flex-col items-center">
@@ -72,7 +73,7 @@ const Hero = () => {
               </svg>
             </div>
             <span className="text-white font-medium drop-shadow-md">Rated</span>
-            <span className="text-white/90 text-sm drop-shadow-sm">4.9/5 Stars</span>
+            <span className="text-white/90 text-sm drop-shadow-sm">4.3/5 Stars</span>
           </div>
         </div>
       </div>

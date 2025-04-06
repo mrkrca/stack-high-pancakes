@@ -40,7 +40,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
               <li className="text-syrup-200">123 Main Street</li>
-              <li className="text-syrup-200">Orange County, CA 92705</li>
+              <li className="text-syrup-200">Ocean City, MD 78250</li>
               <li className="text-syrup-200">(714) 555-1234</li>
               <li>
                 <a href="mailto:hello@ocpancakes.com" className="text-syrup-200 hover:text-white transition">

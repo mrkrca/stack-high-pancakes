@@ -49,7 +49,7 @@ export const menuItems = [
     description: 'Fresh blueberries folded into our buttermilk batter. Topped with blueberry compote.',
     price: 11.99,
     category: 'pancakes',
-    image: '/images/pancake-stack.jpg',
+    image: '/images/gallery14.jpg',
     isVegetarian: true
   },
   {

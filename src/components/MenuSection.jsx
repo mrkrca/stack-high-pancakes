@@ -90,11 +90,7 @@ const MenuSection = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <button className="bg-pancake-500 text-white hover:bg-pancake-600 px-8 py-3 rounded-md font-semibold transition-colors">
-            Order Online Now
-          </button>
-        </div>
+      
       </div>
     </section>
   );

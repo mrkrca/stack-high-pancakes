@@ -1,8 +1,29 @@
 
 import React from 'react';
 import { MapPin, Phone, Clock, Mail } from 'lucide-react';
+import './location.css'
+import { useRef, useEffect } from 'react'
+import mapboxgl from 'mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const LocationSection = () => {
+
+  
+  const mapRef = useRef()
+  const mapContainerRef = useRef()
+
+  useEffect(() => {
+    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'
+    mapRef.current = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      center: [38.39449638884106, -75.06376917775981],
+      zoom: 10.12
+    });
+
+    return () => {
+      mapRef.current.remove()
+    }
+  }, [])
   return (
     <section id="location" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -17,7 +38,7 @@ const LocationSection = () => {
           <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 bg-gray-200">
             {/* This would be replaced with an actual map */}
             <div className="w-full h-full flex items-center justify-center bg-gray-100">
-              <span className="text-gray-400">Interactive Map Would Go Here</span>
+             <div id='map-container' ref={mapContainerRef}/>
             </div>
           </div>
           

@@ -11,14 +11,12 @@ const AboutSection = () => {
               Our Pancake Story
             </h2>
             <p className="text-syrup-600 mb-4">
-              Since 1985, OC Pancakes has been serving the freshest, fluffiest pancakes in Orange County. What started as a small family kitchen with a secret recipe has grown into the breakfast destination loved by locals and tourists alike.
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias tempore voluptate qui cum impedit illum magnam quam obcaecati aut expedita, debitis facere quos ut repellendus eum blanditiis sunt porro animi.
             </p>
             <p className="text-syrup-600 mb-4">
-              Our founder, Grandma Betty, believed that breakfast should never be rushed and always made with love. Today, we continue her legacy by using only the finest ingredients and making everything from scratch daily.
-            </p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, rerum facere impedit nobis culpa beatae cumque ex fuga dolorem tempora corrupti et, vitae sit at unde quo error, dolores adipisci.            </p>
             <p className="text-syrup-600 mb-8">
-              From our classic buttermilk pancakes to our creative seasonal specials, every dish is crafted to bring warmth and joy to your morning.
-            </p>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in natus sequi reprehenderit repellat autem amet possimus minus ut rem nulla itaque enim distinctio dicta, quia nisi impedit illo excepturi!            </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">
@@ -44,14 +42,14 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-lg transform translate-y-6">
                 <img 
-                  src="/images/pancake-stack.jpg" 
+                  src="/images/gallery3.jpg" 
                   alt="Pancakes being prepared" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/images/french-toast.jpg" 
+                  src="/images/toastImg.jpg" 
                   alt="Restaurant interior" 
                   className="w-full h-full object-cover"
                 />
@@ -60,14 +58,14 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/images/waffle.jpg" 
+                  src="/images/EggsImg.jpg" 
                   alt="Stack of pancakes" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg transform translate-y-6">
                 <img 
-                  src="/images/breakfast-plate.jpg" 
+                  src="/images/interior.jpg" 
                   alt="Happy customers" 
                   className="w-full h-full object-cover"
                 />
