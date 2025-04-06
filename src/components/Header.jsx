@@ -34,10 +34,10 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#menu" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Menu</a>
+           
             <a href="#about" className="text-syrup-700 hover:text-pancake-600 font-medium transition">About</a>
             <a href="#location" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Location</a>
-            <a href="#contact" className="btn-primary">Order Online</a>
+            <a href="#menu" className="btn-primary">Menu</a>
           </nav>
           
           {/* Mobile Menu Button */}
@@ -73,13 +73,7 @@ const Header = () => {
             >
               Location
             </a>
-            <a 
-              href="#contact" 
-              className="btn-primary inline-block text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Order Online
-            </a>
+            
           </nav>
         )}
       </div>

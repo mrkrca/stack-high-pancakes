@@ -38,7 +38,7 @@ const Hero = () => {
 
           <button 
             onClick={scrollToMenu}
-            className="bg-white text-syrup-700 hover:bg-syrup-50 border border-syrup-200 px-8 py-3 rounded-md font-semibold transition-colors"
+            className="btn-primary text-syrup-700 hover:bg-syrup-50   px-8 py-3 rounded-md font-semibold transition-colors"
           >
             View Menu
           </button>
