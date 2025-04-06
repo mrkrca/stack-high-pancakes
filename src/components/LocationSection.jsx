@@ -1,45 +1,71 @@
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Clock, Mail } from 'lucide-react';
-import './location.css'
-import { useRef, useEffect } from 'react'
-import mapboxgl from 'mapbox-gl'
-import 'mapbox-gl/dist/mapbox-gl.css';
+import './location.css';
 
 const LocationSection = () => {
-
+  const mapRef = useRef(null);
+  const [mapLoaded, setMapLoaded] = useState(false);
   
-  const mapRef = useRef()
-  const mapContainerRef = useRef()
-
   useEffect(() => {
-    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'
-    mapRef.current = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      center: [38.39449638884106, -75.06376917775981],
-      zoom: 10.12
+    // Load the Google Maps API script
+    const googleMapScript = document.createElement('script');
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBhFerFLvgyd_qwPsLA-wJNt_ugTVsl9_o&libraries=places`;
+    googleMapScript.async = true;
+    googleMapScript.defer = true;
+    window.document.body.appendChild(googleMapScript);
+    
+    googleMapScript.addEventListener('load', () => {
+      setMapLoaded(true);
     });
-
+    
     return () => {
-      mapRef.current.remove()
+      // Clean up the script when component unmounts
+      window.document.body.removeChild(googleMapScript);
+    };
+  }, []);
+  
+  useEffect(() => {
+    if (mapLoaded && mapRef.current) {
+      // Restaurant location (Ocean City, MD)
+      const restaurantLocation = { lat: 38.3365, lng: -75.0849 };
+      
+      // Create the map
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: restaurantLocation,
+        zoom: 15,
+        mapTypeId: 'roadmap',
+        mapTypeControl: false,
+        streetViewControl: false
+      });
+      
+      // Add a marker for the restaurant
+      new window.google.maps.Marker({
+        position: restaurantLocation,
+        map,
+        title: 'OC Pancakes',
+        animation: window.google.maps.Animation.DROP
+      });
     }
-  }, [])
+  }, [mapLoaded]);
+
   return (
     <section id="location" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-syrup-800 mb-4">Find Us</h2>
           <p className="text-syrup-600 max-w-xl mx-auto">
-            Conveniently located in the heart of Orange County, with plenty of parking available.
+            Conveniently located in the heart of Ocean City, with plenty of parking available.
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 bg-gray-200">
-            {/* This would be replaced with an actual map */}
-            <div className="w-full h-full flex items-center justify-center bg-gray-100">
-             <div id='map-container' ref={mapContainerRef}/>
-            </div>
+          <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96">
+            <div 
+              ref={mapRef} 
+              className="w-full h-full bg-gray-100"
+              style={{ borderRadius: '0.5rem' }}
+            ></div>
           </div>
           
           <div className="lg:col-span-2 flex flex-col justify-center">
@@ -53,7 +79,7 @@ const LocationSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-syrup-700">Address</h4>
-                    <p className="text-syrup-600">123 Main Street<br />Orange County, CA 92705</p>
+                    <p className="text-syrup-600">123 Coastal Highway<br />Ocean City, MD 21842</p>
                   </div>
                 </div>
                 
@@ -63,7 +89,7 @@ const LocationSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-syrup-700">Phone</h4>
-                    <p className="text-syrup-600">(714) 555-1234</p>
+                    <p className="text-syrup-600">(410) 555-1234</p>
                   </div>
                 </div>
                 
