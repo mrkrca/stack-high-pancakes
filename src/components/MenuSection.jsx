@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
+// import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
@@ -31,6 +31,8 @@ const MenuSection = () => {
   const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
 
   // Function to get appropriate icon for subcategory
+  //DISABLED CURRENTLY, ENABLE IF U WANT ICONS
+  /*
   const getSubcategoryIcon = (subcategoryId) => {
     switch (subcategoryId) {
       case 'pancakes':
@@ -47,7 +49,7 @@ const MenuSection = () => {
         return null;
     }
   };
-
+*/
   return (
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
@@ -85,16 +87,7 @@ const MenuSection = () => {
               onValueChange={(value) => setActiveSubcategory(value === 'all' ? '' : value)}
             >
               <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
-                <TabsTrigger
-                  key="all"
-                  value="all"
-                  className={`flex items-center px-4 py-2 rounded-full transition-colors
-                    ${activeSubcategory === '' 
-                      ? 'bg-amber-100 text-amber-800' 
-                      : 'hover:bg-amber-50'}`}
-                >
-                  All {currentCategory.name}
-                </TabsTrigger>
+              
                 {currentCategory.subcategories.map((sub) => (
                   <TabsTrigger
                     key={sub.id}
@@ -104,7 +97,7 @@ const MenuSection = () => {
                         ? 'bg-amber-100 text-amber-800' 
                         : 'hover:bg-amber-50'}`}
                   >
-                    {getSubcategoryIcon(sub.id)}
+                   {/*HERE ENABLE IF U WANT ICON, BUT GOTTA ENABLE IMPORT ASWELL getSubcategoryIcon(sub.id)*/}
                     {sub.name}
                   </TabsTrigger>
                 ))}
@@ -115,27 +108,31 @@ const MenuSection = () => {
         
         {/* Category Description */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-amber-700 mb-3">
-            {activeSubcategory 
-              ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.name
-              : currentCategory?.name}
-          </h3>
-          {!activeSubcategory && (
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {currentCategory?.description}
-            </p>
-          )}
+        <h3 className="text-2xl font-bold text-amber-700 mb-3">
+          {activeSubcategory 
+            ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.name
+            : currentCategory?.name}
+        </h3>
+        <div className="text-gray-600 max-w-2xl mx-auto space-y-4">
+          {activeSubcategory 
+            ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.description.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))
+            : currentCategory?.description.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
         </div>
+      </div>
         
         {/* Menu Items Grid */}
         {filteredItems.length > 0 ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             {filteredItems.map(item => (
               <Card 
                 key={item.id} 
-                className="bg-white border-amber-200 hover:shadow-lg transition-all duration-300"
+                className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 "
               >
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-1">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-amber-800 flex items-center">
                       {item.name}
