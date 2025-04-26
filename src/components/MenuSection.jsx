@@ -1,15 +1,42 @@
+
 import React, { useState, useEffect } from 'react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-// import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
+import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
   const [activeSubcategory, setActiveSubcategory] = useState('pancakes');
   const [filteredItems, setFilteredItems] = useState([]);
+
+  // Helper function to get the first subcategory of a category
+  const getFirstSubcategory = (categoryId) => {
+    const category = menuCategories.find(cat => cat.id === categoryId);
+    return category?.subcategories?.[0]?.id || '';
+  };
+
+  // Handle category change and set initial subcategory
+  const handleCategoryClick = (categoryId) => {
+    setActiveCategory(categoryId);
+    
+    // Set default subcategory based on category
+    let initialSubcategory = '';
+    
+    if (categoryId === 'breakfast') {
+      initialSubcategory = 'pancakes';
+    } else if (categoryId === 'lunch') {
+      initialSubcategory = 'burgers'; // First subcategory of lunch
+    } else if (categoryId === 'beverages') {
+      initialSubcategory = 'coffee'; // First subcategory of beverages
+    } else {
+      initialSubcategory = getFirstSubcategory(categoryId);
+    }
+    
+    setActiveSubcategory(initialSubcategory);
+  };
 
   useEffect(() => {
     // Filter items based on category and subcategory
@@ -23,16 +50,9 @@ const MenuSection = () => {
     setFilteredItems(filtered);
   }, [activeCategory, activeSubcategory]);
 
-  const handleCategoryClick = (categoryId) => {
-    setActiveCategory(categoryId);
-    setActiveSubcategory(''); // Reset subcategory when changing main category
-  };
-
   const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
 
   // Function to get appropriate icon for subcategory
-  //DISABLED CURRENTLY, ENABLE IF U WANT ICONS
-  /*
   const getSubcategoryIcon = (subcategoryId) => {
     switch (subcategoryId) {
       case 'pancakes':
@@ -41,15 +61,15 @@ const MenuSection = () => {
         return <ArrowUp className="mr-2" />;
       case 'sandwiches':
         return <Sandwich className="mr-2" />;
-      case 'waffles':
-        return <Coffee className="mr-2" />;
-      case 'sides':
+      case 'burgers':
         return <Utensils className="mr-2" />;
+      case 'coffee':
+        return <Coffee className="mr-2" />;
       default:
         return null;
     }
   };
-*/
+
   return (
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
@@ -83,11 +103,10 @@ const MenuSection = () => {
         {currentCategory?.subcategories && currentCategory.subcategories.length > 0 && (
           <div className="mb-8">
             <Tabs 
-              value={activeSubcategory || 'all'} 
-              onValueChange={(value) => setActiveSubcategory(value === 'all' ? '' : value)}
+              value={activeSubcategory} 
+              onValueChange={(value) => setActiveSubcategory(value)}
             >
               <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
-              
                 {currentCategory.subcategories.map((sub) => (
                   <TabsTrigger
                     key={sub.id}
@@ -97,7 +116,7 @@ const MenuSection = () => {
                         ? 'bg-amber-100 text-amber-800' 
                         : 'hover:bg-amber-50'}`}
                   >
-                   {/*HERE ENABLE IF U WANT ICON, BUT GOTTA ENABLE IMPORT ASWELL getSubcategoryIcon(sub.id)*/}
+                    {getSubcategoryIcon(sub.id)}
                     {sub.name}
                   </TabsTrigger>
                 ))}
@@ -108,21 +127,21 @@ const MenuSection = () => {
         
         {/* Category Description */}
         <div className="text-center mb-12">
-        <h3 className="text-2xl font-bold text-amber-700 mb-3">
-          {activeSubcategory 
-            ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.name
-            : currentCategory?.name}
-        </h3>
-        <div className="text-gray-600 max-w-2xl mx-auto space-y-4">
-          {activeSubcategory 
-            ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.description.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))
-            : currentCategory?.description.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
+          <h3 className="text-2xl font-bold text-amber-700 mb-3">
+            {activeSubcategory 
+              ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.name
+              : currentCategory?.name}
+          </h3>
+          <div className="text-gray-600 max-w-2xl mx-auto space-y-4">
+            {activeSubcategory 
+              ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.description?.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))
+              : currentCategory?.description?.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+          </div>
         </div>
-      </div>
         
         {/* Menu Items Grid */}
         {filteredItems.length > 0 ? (
@@ -170,10 +189,10 @@ const MenuSection = () => {
        
       </div>
       <div className="tipPolicy text-center mt-12 text-gray-700">
-  <p className="text-lg font-medium bg-amber-100 inline-block px-6 py-3 rounded-lg shadow-md">
-    Please NO substitutions. 20% service charge added to parties of 6 or more. Some menu items may be unavailable in off-season.
-  </p>
-</div>
+        <p className="text-lg font-medium bg-amber-100 inline-block px-6 py-3 rounded-lg shadow-md">
+          Please NO substitutions. 20% service charge added to parties of 6 or more. Some menu items may be unavailable in off-season.
+        </p>
+      </div>
     </section>
   );
 };
