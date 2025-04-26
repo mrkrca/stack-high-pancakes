@@ -8,7 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
-  const [activeSubcategory, setActiveSubcategory] = useState('');
+  const [activeSubcategory, setActiveSubcategory] = useState('pancakes');
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
@@ -167,7 +167,13 @@ const MenuSection = () => {
             <p className="text-gray-600">No items found in this category.</p>
           </div>
         )}
+       
       </div>
+      <div className="tipPolicy text-center mt-12 text-gray-700">
+  <p className="text-lg font-medium bg-amber-100 inline-block px-6 py-3 rounded-lg shadow-md">
+    Please NO substitutions. 20% service charge added to parties of 6 or more. Some menu items may be unavailable in off-season.
+  </p>
+</div>
     </section>
   );
 };
