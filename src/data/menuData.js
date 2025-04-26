@@ -89,7 +89,7 @@ export const menuItems = [
   {
     id: 6,
     name: 'Pecan Pancakes',
-    description: 'Loaded with crunchy pecans for a Southern-inspired breakfast that's full of flavor.',
+    description: 'Loaded with crunchy pecans for a Southern-inspired breakfast that\'s full of flavor.',
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
