@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react'; // Added Phone icon
+import { Menu, X, Phone, Facebook, Twitter, Instagram } from 'lucide-react'; // Added social media icons
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,12 +36,40 @@ const Header = () => {
             <a href="#menu" className="btn-primary">Menu</a>
           </nav>
 
-          {/* Phone Number */}
-          <div className="hidden md:flex items-center space-x-2 text-syrup-700 font-medium">
-            <Phone size={20} className="text-pancake-600" />
-            <a href="tel:+14105200407" className="hover:text-pancake-600 transition">
-              +1 (410) 520-0407
-            </a>
+          {/* Phone Number and Social Media */}
+          <div className="hidden md:flex items-center space-x-4 text-syrup-700 font-medium">
+            <div className="flex items-center space-x-2">
+              <Phone size={20} className="text-pancake-600" />
+              <a href="tel:+14105200407" className="hover:text-pancake-600 transition">
+                +1 (410) 520-0407
+              </a>
+            </div>
+            <div className="flex items-center space-x-3">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-syrup-700 hover:text-pancake-600 transition"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-syrup-700 hover:text-pancake-600 transition"
+              >
+                <Twitter size={20} />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-syrup-700 hover:text-pancake-600 transition"
+              >
+                <Instagram size={20} />
+              </a>
+            </div>
           </div>
           
           {/* Mobile Menu Button */}
@@ -85,6 +113,33 @@ const Header = () => {
             >
               Call Us: +1 (410) 520-0407
             </a>
+            {/* Social Media in Mobile Menu */}
+            <div className="flex justify-center space-x-4 mt-4">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-syrup-700 hover:text-pancake-600 transition"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-syrup-700 hover:text-pancake-600 transition"
+              >
+                <Twitter size={20} />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-syrup-700 hover:text-pancake-600 transition"
+              >
+                <Instagram size={20} />
+              </a>
+            </div>
           </nav>
         )}
       </div>
