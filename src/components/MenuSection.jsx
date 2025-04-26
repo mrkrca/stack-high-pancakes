@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
+//import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
@@ -51,7 +51,7 @@ const MenuSection = () => {
   }, [activeCategory, activeSubcategory]);
 
   const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
-
+/*
   // Function to get appropriate icon for subcategory
   const getSubcategoryIcon = (subcategoryId) => {
     switch (subcategoryId) {
@@ -69,7 +69,7 @@ const MenuSection = () => {
         return null;
     }
   };
-
+*/
   return (
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
@@ -116,7 +116,7 @@ const MenuSection = () => {
                         ? 'bg-amber-100 text-amber-800' 
                         : 'hover:bg-amber-50'}`}
                   >
-                    {getSubcategoryIcon(sub.id)}
+                    {/*getSubcategoryIcon(sub.id)*/}
                     {sub.name}
                   </TabsTrigger>
                 ))}

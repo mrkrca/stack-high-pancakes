@@ -52,7 +52,7 @@ const Hero = () => {
               </svg>
             </div>
             <span className="text-white font-medium drop-shadow-md">Open Daily</span>
-            <span className="text-white/90 text-sm drop-shadow-sm">7am - 2pm</span>
+            <span className="text-white/90 text-sm drop-shadow-sm">8am - 1pm</span>
           </div>
           
           <div className="flex flex-col items-center">

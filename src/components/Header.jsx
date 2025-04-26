@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react'; // Added Phone icon
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,24 +20,29 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <a href="/" className="flex items-center">
-         
-          
             <img 
               src="/images/logo.png" 
               alt="OC Pancakes Logo" 
               className="w-32 h-auto" 
             />
-            
           </a>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-           
             <a href="#about" className="text-syrup-700 hover:text-pancake-600 font-medium transition">About</a>
             <a href="#location" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Location</a>
             <a href="#menu" className="btn-primary">Menu</a>
           </nav>
+
+          {/* Phone Number */}
+          <div className="hidden md:flex items-center space-x-2 text-syrup-700 font-medium">
+            <Phone size={20} className="text-pancake-600" />
+            <a href="tel:+14105200407" className="hover:text-pancake-600 transition">
+              +1 (410) 520-0407
+            </a>
+          </div>
           
           {/* Mobile Menu Button */}
           <button 
@@ -73,7 +77,14 @@ const Header = () => {
             >
               Location
             </a>
-            
+            {/* Phone Number in Mobile Menu */}
+            <a 
+              href="tel:+14105200407" 
+              className="text-syrup-700 hover:text-pancake-600 font-medium transition"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Call Us: +1 (410) 520-0407
+            </a>
           </nav>
         )}
       </div>

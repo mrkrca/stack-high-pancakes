@@ -28,7 +28,7 @@ const LocationSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8  items-center" >
           {/* Map Section */}
-          <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96">
+          <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 z-10"> 
             <MapContainer
               center={restaurantLocation}
               zoom={15}
