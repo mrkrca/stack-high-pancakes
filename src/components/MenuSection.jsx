@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { EggFried, Utensils, Pancake, Sandwich, Waffle } from 'lucide-react';
+import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
@@ -35,13 +34,13 @@ const MenuSection = () => {
   const getSubcategoryIcon = (subcategoryId) => {
     switch (subcategoryId) {
       case 'pancakes':
-        return <Pancake className="mr-2" />;
+        return <Pizza className="mr-2" />;
       case 'country-eggs':
-        return <EggFried className="mr-2" />;
+        return <ArrowUp className="mr-2" />;
       case 'sandwiches':
         return <Sandwich className="mr-2" />;
       case 'waffles':
-        return <Waffle className="mr-2" />;
+        return <Coffee className="mr-2" />;
       case 'sides':
         return <Utensils className="mr-2" />;
       default:
