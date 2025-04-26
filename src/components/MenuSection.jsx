@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { EggFried, Utensils } from 'lucide-react';
+import { EggFried, Utensils, Pancake, Sandwich, Waffle } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
@@ -13,9 +13,6 @@ const MenuSection = () => {
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
-    // Reset subcategory when changing main category
-    setActiveSubcategory('');
-    
     // Filter items based on category and subcategory
     const filtered = menuItems.filter(item => {
       if (activeSubcategory) {
@@ -27,13 +24,24 @@ const MenuSection = () => {
     setFilteredItems(filtered);
   }, [activeCategory, activeSubcategory]);
 
+  const handleCategoryClick = (categoryId) => {
+    setActiveCategory(categoryId);
+    setActiveSubcategory(''); // Reset subcategory when changing main category
+  };
+
   const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
 
   // Function to get appropriate icon for subcategory
   const getSubcategoryIcon = (subcategoryId) => {
     switch (subcategoryId) {
+      case 'pancakes':
+        return <Pancake className="mr-2" />;
       case 'country-eggs':
         return <EggFried className="mr-2" />;
+      case 'sandwiches':
+        return <Sandwich className="mr-2" />;
+      case 'waffles':
+        return <Waffle className="mr-2" />;
       case 'sides':
         return <Utensils className="mr-2" />;
       default:
@@ -57,7 +65,7 @@ const MenuSection = () => {
           {menuCategories.map(category => (
             <Button
               key={category.id}
-              onClick={() => setActiveCategory(category.id)}
+              onClick={() => handleCategoryClick(category.id)}
               variant={activeCategory === category.id ? "default" : "outline"}
               className={`px-6 py-3 text-lg ${
                 activeCategory === category.id
@@ -70,11 +78,24 @@ const MenuSection = () => {
           ))}
         </div>
 
-        {/* Subcategories for Breakfast */}
-        {activeCategory === 'breakfast' && currentCategory?.subcategories && (
+        {/* Subcategories for Current Category */}
+        {currentCategory?.subcategories && currentCategory.subcategories.length > 0 && (
           <div className="mb-8">
-            <Tabs defaultValue={activeSubcategory} onValueChange={setActiveSubcategory}>
+            <Tabs 
+              value={activeSubcategory || 'all'} 
+              onValueChange={(value) => setActiveSubcategory(value === 'all' ? '' : value)}
+            >
               <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
+                <TabsTrigger
+                  key="all"
+                  value="all"
+                  className={`flex items-center px-4 py-2 rounded-full transition-colors
+                    ${activeSubcategory === '' 
+                      ? 'bg-amber-100 text-amber-800' 
+                      : 'hover:bg-amber-50'}`}
+                >
+                  All {currentCategory.name}
+                </TabsTrigger>
                 {currentCategory.subcategories.map((sub) => (
                   <TabsTrigger
                     key={sub.id}
@@ -108,42 +129,48 @@ const MenuSection = () => {
         </div>
         
         {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {filteredItems.map(item => (
-            <Card 
-              key={item.id} 
-              className="bg-white border-amber-200 hover:shadow-lg transition-all duration-300"
-            >
-              <CardHeader className="pb-3">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-amber-800 flex items-center">
-                    {item.name}
-                    {item.isVegetarian && (
-                      <span className="ml-2 inline-block w-4 h-4 bg-green-500 rounded-full" title="Vegetarian"></span>
-                    )}
-                  </CardTitle>
-                  <span className="font-bold text-amber-600">${item.price.toFixed(2)}</span>
-                </div>
-                {item.tags && item.tags.length > 0 && (
-                  <div className="flex gap-2 mt-1">
-                    {item.tags.map(tag => (
-                      <Badge 
-                        key={tag}
-                        variant="outline"
-                        className="bg-amber-100 text-amber-800 border-amber-300"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+        {filteredItems.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {filteredItems.map(item => (
+              <Card 
+                key={item.id} 
+                className="bg-white border-amber-200 hover:shadow-lg transition-all duration-300"
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="text-amber-800 flex items-center">
+                      {item.name}
+                      {item.isVegetarian && (
+                        <span className="ml-2 inline-block w-4 h-4 bg-green-500 rounded-full" title="Vegetarian"></span>
+                      )}
+                    </CardTitle>
+                    <span className="font-bold text-amber-600">${item.price.toFixed(2)}</span>
                   </div>
-                )}
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">{item.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  {item.tags && item.tags.length > 0 && (
+                    <div className="flex gap-2 mt-1">
+                      {item.tags.map(tag => (
+                        <Badge 
+                          key={tag}
+                          variant="outline"
+                          className="bg-amber-100 text-amber-800 border-amber-300"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-600">No items found in this category.</p>
+          </div>
+        )}
       </div>
     </section>
   );

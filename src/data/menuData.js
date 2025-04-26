@@ -1,3 +1,4 @@
+
 export const menuCategories = [
   {
     id: 'breakfast',
@@ -17,17 +18,29 @@ export const menuCategories = [
   {
     id: 'lunch',
     name: 'Lunch',
-    description: 'Satisfying lunch options for a midday meal'
+    description: 'Satisfying lunch options for a midday meal',
+    subcategories: [
+      { id: 'burgers', name: 'Signature Burgers' },
+      { id: 'sandwiches', name: 'Deli Sandwiches' },
+      { id: 'salads', name: 'Fresh Salads' },
+      { id: 'soups', name: 'Homemade Soups' }
+    ]
   },
   {
     id: 'beverages',
     name: 'Beverages',
-    description: 'Hot and cold drinks to complement your meal'
+    description: 'Hot and cold drinks to complement your meal',
+    subcategories: [
+      { id: 'coffee', name: 'Coffee & Tea' },
+      { id: 'juices', name: 'Fresh Juices' },
+      { id: 'smoothies', name: 'Smoothies' },
+      { id: 'milk-shakes', name: 'Milk Shakes' }
+    ]
   }
 ];
 
 export const menuItems = [
-  // Pancakes
+  // PANCAKES
   {
     id: 1,
     name: 'Original Pancakes (3)',
@@ -38,7 +51,52 @@ export const menuItems = [
     tags: ['Bestseller'],
     isVegetarian: true,
   },
-  // Country Style Eggs
+  {
+    id: 2,
+    name: 'Banana Pancakes',
+    description: 'Fresh bananas blended into our batter for a naturally sweet and irresistible flavor.',
+    price: 9.99,
+    category: 'breakfast',
+    subcategory: 'pancakes',
+    isVegetarian: true,
+  },
+  {
+    id: 3,
+    name: 'Pancakes with Fresh Strawberries',
+    description: 'Topped with juicy, hand-picked strawberries and a dollop of whipped cream. A seasonal delight!',
+    price: 11.99,
+    category: 'breakfast',
+    subcategory: 'pancakes',
+    isVegetarian: true,
+  },
+  {
+    id: 4,
+    name: 'Bacon Pancakes',
+    description: 'Crispy bacon bits folded into our fluffy pancakes for the perfect sweet and savory combination.',
+    price: 10.99,
+    category: 'breakfast',
+    subcategory: 'pancakes',
+  },
+  {
+    id: 5,
+    name: 'Yummy Red Velvet Pancakes',
+    description: 'Decadent red velvet pancakes with a hint of cocoa, topped with cream cheese glaze for a dessert-like breakfast.',
+    price: 10.99,
+    category: 'breakfast',
+    subcategory: 'pancakes',
+    isVegetarian: true,
+  },
+  {
+    id: 6,
+    name: 'Pecan Pancakes',
+    description: 'Loaded with crunchy pecans for a Southern-inspired breakfast that's full of flavor.',
+    price: 10.99,
+    category: 'breakfast',
+    subcategory: 'pancakes',
+    isVegetarian: true,
+  },
+  
+  // COUNTRY STYLE EGGS
   {
     id: 20,
     name: 'Farm Fresh Eggs',
@@ -48,7 +106,24 @@ export const menuItems = [
     subcategory: 'country-eggs',
     isVegetarian: true,
   },
-  // Breakfast Sandwich
+  {
+    id: 31,
+    name: 'Steak & Eggs',
+    description: '6oz sirloin steak cooked to your liking, served with two eggs any style and golden hash browns.',
+    price: 16.99,
+    category: 'breakfast',
+    subcategory: 'country-eggs',
+  },
+  {
+    id: 32,
+    name: 'Country Benedict',
+    description: 'Two poached eggs on English muffins with country ham, topped with hollandaise sauce.',
+    price: 12.99,
+    category: 'breakfast',
+    subcategory: 'country-eggs',
+  },
+  
+  // BREAKFAST SANDWICHES
   {
     id: 21,
     name: 'Classic Breakfast Sandwich',
@@ -57,7 +132,24 @@ export const menuItems = [
     category: 'breakfast',
     subcategory: 'sandwiches',
   },
-  // Belgian Waffle
+  {
+    id: 33,
+    name: 'Sunrise Croissant',
+    description: 'Buttery croissant filled with scrambled eggs, avocado, and Swiss cheese.',
+    price: 11.49,
+    category: 'breakfast',
+    subcategory: 'sandwiches',
+  },
+  {
+    id: 34,
+    name: 'The Morning Wrap',
+    description: 'Scrambled eggs, sausage, peppers, onions and cheddar cheese in a warm flour tortilla.',
+    price: 10.49,
+    category: 'breakfast',
+    subcategory: 'sandwiches',
+  },
+  
+  // BELGIAN WAFFLES
   {
     id: 22,
     name: 'Classic Belgian Waffle',
@@ -67,7 +159,25 @@ export const menuItems = [
     subcategory: 'waffles',
     isVegetarian: true,
   },
-  // French Toast
+  {
+    id: 35,
+    name: 'Chicken & Waffles',
+    description: 'Our signature Belgian waffle topped with crispy fried chicken and drizzled with maple syrup.',
+    price: 14.99,
+    category: 'breakfast',
+    subcategory: 'waffles',
+  },
+  {
+    id: 36,
+    name: 'Banana Pecan Waffle',
+    description: 'Belgian waffle topped with caramelized bananas, pecans, and caramel sauce.',
+    price: 12.99,
+    category: 'breakfast',
+    subcategory: 'waffles',
+    isVegetarian: true,
+  },
+  
+  // FRENCH TOAST
   {
     id: 23,
     name: 'Cinnamon French Toast',
@@ -77,7 +187,25 @@ export const menuItems = [
     subcategory: 'french-toast',
     isVegetarian: true,
   },
-  // Breakfast Special
+  {
+    id: 37,
+    name: 'Stuffed French Toast',
+    description: 'French toast stuffed with sweetened cream cheese and topped with berry compote.',
+    price: 12.99,
+    category: 'breakfast',
+    subcategory: 'french-toast',
+    isVegetarian: true,
+  },
+  {
+    id: 38,
+    name: 'Maple Bacon French Toast',
+    description: 'French toast topped with maple-glazed bacon and powdered sugar.',
+    price: 13.49,
+    category: 'breakfast',
+    subcategory: 'french-toast',
+  },
+  
+  // BREAKFAST SPECIALS
   {
     id: 24,
     name: 'Morning Glory Special',
@@ -86,7 +214,25 @@ export const menuItems = [
     category: 'breakfast',
     subcategory: 'specials',
   },
-  // Omelette
+  {
+    id: 39,
+    name: 'Farmer\'s Special',
+    description: 'Three eggs any style with ham, bacon, sausage, hash browns, and toast.',
+    price: 15.99,
+    category: 'breakfast',
+    subcategory: 'specials',
+  },
+  {
+    id: 40,
+    name: 'Healthy Start',
+    description: 'Egg white omelette with spinach and feta, served with fruit and whole grain toast.',
+    price: 12.99,
+    category: 'breakfast',
+    subcategory: 'specials',
+    isVegetarian: true,
+  },
+  
+  // OMELETTES
   {
     id: 25,
     name: 'Denver Omelette',
@@ -95,7 +241,26 @@ export const menuItems = [
     category: 'breakfast',
     subcategory: 'omelettes',
   },
-  // Side Order
+  {
+    id: 41,
+    name: 'Veggie Omelette',
+    description: 'Four eggs with spinach, mushrooms, tomatoes, and Swiss cheese.',
+    price: 11.99,
+    category: 'breakfast',
+    subcategory: 'omelettes',
+    isVegetarian: true,
+  },
+  {
+    id: 42,
+    name: 'Mediterranean Omelette',
+    description: 'Four eggs with olives, feta cheese, tomatoes, and spinach.',
+    price: 13.49,
+    category: 'breakfast',
+    subcategory: 'omelettes',
+    isVegetarian: true,
+  },
+  
+  // SIDES
   {
     id: 26,
     name: 'Crispy Bacon',
@@ -104,138 +269,227 @@ export const menuItems = [
     category: 'breakfast',
     subcategory: 'sides',
   },
-  // Breakfast Items
   {
-    id: 2,
-    name: 'Banana Pancakes',
-    description: 'Fresh bananas blended into our batter for a naturally sweet and irresistible flavor.',
+    id: 43,
+    name: 'Sausage Links',
+    description: 'Three savory breakfast sausage links.',
+    price: 4.49,
+    category: 'breakfast',
+    subcategory: 'sides',
+  },
+  {
+    id: 44,
+    name: 'Hash Browns',
+    description: 'Golden crispy shredded potatoes.',
+    price: 3.99,
+    category: 'breakfast',
+    subcategory: 'sides',
+    isVegetarian: true,
+  },
+  {
+    id: 45,
+    name: 'Toast & Jam',
+    description: 'Two slices of toast with butter and assorted jams.',
+    price: 2.99,
+    category: 'breakfast',
+    subcategory: 'sides',
+    isVegetarian: true,
+  },
+  {
+    id: 46,
+    name: 'Fresh Fruit Bowl',
+    description: 'Seasonal fresh fruit mix.',
+    price: 5.99,
+    category: 'breakfast',
+    subcategory: 'sides',
+    isVegetarian: true,
+  },
+  
+  // LUNCH - BURGERS
+  {
+    id: 50,
+    name: 'Classic Cheeseburger',
+    description: '1/3 lb beef patty with American cheese, lettuce, tomato, and our special sauce.',
+    price: 12.99,
+    category: 'lunch',
+    subcategory: 'burgers',
+  },
+  {
+    id: 51,
+    name: 'Bacon BBQ Burger',
+    description: '1/3 lb beef patty with crispy bacon, cheddar cheese, and tangy BBQ sauce.',
+    price: 14.99,
+    category: 'lunch',
+    subcategory: 'burgers',
+  },
+  {
+    id: 52,
+    name: 'Mushroom Swiss Burger',
+    description: '1/3 lb beef patty topped with sautéed mushrooms and melted Swiss cheese.',
+    price: 13.99,
+    category: 'lunch',
+    subcategory: 'burgers',
+  },
+  
+  // LUNCH - SANDWICHES
+  {
+    id: 53,
+    name: 'Club Sandwich',
+    description: 'Triple-decker with turkey, bacon, lettuce, tomato, and mayo on toasted bread.',
+    price: 11.99,
+    category: 'lunch',
+    subcategory: 'sandwiches',
+  },
+  {
+    id: 54,
+    name: 'BLT',
+    description: 'Crispy bacon, fresh lettuce, and juicy tomato on your choice of toasted bread.',
     price: 9.99,
-    category: 'breakfast',
-    tags: [],
-    isVegetarian: true,
+    category: 'lunch',
+    subcategory: 'sandwiches',
   },
   {
-    id: 3,
-    name: 'Pancakes with Fresh Strawberries',
-    description: 'Topped with juicy, hand-picked strawberries and a dollop of whipped cream. A seasonal delight!',
-    price: 11.99,
-    category: 'breakfast',
-    tags: [],
-    isVegetarian: true,
-  },
-  {
-    id: 4,
-    name: 'Bacon Pancakes',
-    description: 'Crispy bacon bits folded into our fluffy pancakes for the perfect sweet and savory combination.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
-  },
-  {
-    id: 5,
-    name: 'Yummy Red Velvet Pancakes',
-    description: 'Decadent red velvet pancakes with a hint of cocoa, topped with cream cheese glaze for a dessert-like breakfast.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
-    isVegetarian: true,
-  },
-  {
-    id: 6,
-    name: 'Pecan Pancakes',
-    description: 'Loaded with crunchy pecans for a Southern-inspired breakfast that’s full of flavor.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
-    isVegetarian: true,
-  },
-  {
-    id: 7,
-    name: 'Pigs In A Blanket',
-    description: 'Savory sausage links wrapped in our golden pancakes. A hearty and satisfying classic.',
-    price: 11.99,
-    category: 'breakfast',
-    tags: [],
-  },
-  {
-    id: 8,
-    name: 'Nut & Grain Pancakes',
-    description: 'Wholesome multigrain pancakes with a generous sprinkle of pecans for a healthy and delicious start to your day.',
-    price: 11.99,
-    category: 'breakfast',
-    tags: [],
-    isVegetarian: true,
-  },
-  {
-    id: 9,
-    name: 'Candy Pancakes',
-    description: 'Choose from Reese’s Pieces, Snickers, M&M’s, or Oreo Cookies & Cream for a fun and indulgent treat.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
-    isVegetarian: true,
-  },
-  {
-    id: 10,
-    name: 'Mini Originals (10)',
-    description: 'Bite-sized versions of our classic pancakes, perfect for sharing or enjoying on your own.',
+    id: 55,
+    name: 'Grilled Cheese',
+    description: 'Melted American and cheddar cheese on grilled sourdough bread.',
     price: 8.99,
-    category: 'breakfast',
-    tags: [],
+    category: 'lunch',
+    subcategory: 'sandwiches',
     isVegetarian: true,
   },
+  
+  // LUNCH - SALADS
   {
-    id: 11,
-    name: 'Blueberry Pancakes',
-    description: 'Bursting with fresh, juicy blueberries in every bite. A timeless favorite!',
+    id: 56,
+    name: 'Caesar Salad',
+    description: 'Crisp romaine lettuce, parmesan cheese, and croutons with Caesar dressing.',
     price: 10.99,
-    category: 'breakfast',
-    tags: [],
+    category: 'lunch',
+    subcategory: 'salads',
     isVegetarian: true,
   },
   {
-    id: 12,
-    name: 'Buckwheat Pancakes',
-    description: 'Hearty and wholesome buckwheat pancakes with a rich, nutty flavor. Perfect for the adventurous eater.',
-    price: 14.99,
-    category: 'breakfast',
-    tags: [],
+    id: 57,
+    name: 'Cobb Salad',
+    description: 'Mixed greens topped with grilled chicken, bacon, egg, avocado, and blue cheese.',
+    price: 13.99,
+    category: 'lunch',
+    subcategory: 'salads',
+  },
+  {
+    id: 58,
+    name: 'Garden Salad',
+    description: 'Fresh mixed greens, cucumber, tomato, and your choice of dressing.',
+    price: 8.99,
+    category: 'lunch',
+    subcategory: 'salads',
+    isVegetarian: true,
+  },
+  
+  // BEVERAGES - COFFEE & TEA
+  {
+    id: 70,
+    name: 'Freshly Brewed Coffee',
+    description: 'Our signature blend, freshly brewed and served hot.',
+    price: 2.99,
+    category: 'beverages',
+    subcategory: 'coffee',
     isVegetarian: true,
   },
   {
-    id: 13,
-    name: 'Chocolate Chip Pancakes',
-    description: 'Loaded with premium Guittard semi-sweet chocolate chips for a sweet and satisfying breakfast.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
+    id: 71,
+    name: 'Espresso',
+    description: 'Rich, concentrated coffee served in a small cup.',
+    price: 3.49,
+    category: 'beverages',
+    subcategory: 'coffee',
     isVegetarian: true,
   },
   {
-    id: 14,
-    name: 'Fruit Topped Pancakes',
-    description: 'Your choice of apple, strawberry, or peach compote, topped with whipped cream for a fruity delight.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
+    id: 72,
+    name: 'Hot Tea',
+    description: 'Your choice of assorted teas.',
+    price: 2.99,
+    category: 'beverages',
+    subcategory: 'coffee',
+    isVegetarian: true,
+  },
+  
+  // BEVERAGES - JUICES
+  {
+    id: 73,
+    name: 'Fresh Orange Juice',
+    description: 'Freshly squeezed orange juice.',
+    price: 4.99,
+    category: 'beverages',
+    subcategory: 'juices',
     isVegetarian: true,
   },
   {
-    id: 15,
-    name: 'Sweet Potato Cakes',
-    description: 'A local specialty made with sweet potatoes for a unique and flavorful breakfast experience.',
-    price: 14.99,
-    category: 'breakfast',
-    tags: [],
+    id: 74,
+    name: 'Apple Juice',
+    description: '100% pure apple juice.',
+    price: 3.99,
+    category: 'beverages',
+    subcategory: 'juices',
     isVegetarian: true,
   },
   {
-    id: 16,
-    name: 'Pineapple Upside Down Pancakes',
-    description: 'Topped with caramelized pineapple slices and a Maraschino cherry for a tropical twist.',
-    price: 10.99,
-    category: 'breakfast',
-    tags: [],
+    id: 75,
+    name: 'Cranberry Juice',
+    description: 'Refreshing cranberry juice.',
+    price: 3.99,
+    category: 'beverages',
+    subcategory: 'juices',
+    isVegetarian: true,
+  },
+  
+  // BEVERAGES - SMOOTHIES
+  {
+    id: 76,
+    name: 'Berry Blast Smoothie',
+    description: 'Blend of strawberries, blueberries, and raspberries with yogurt.',
+    price: 5.99,
+    category: 'beverages',
+    subcategory: 'smoothies',
+    isVegetarian: true,
+  },
+  {
+    id: 77,
+    name: 'Tropical Paradise Smoothie',
+    description: 'Mango, pineapple, and banana blended with coconut milk.',
+    price: 5.99,
+    category: 'beverages',
+    subcategory: 'smoothies',
+    isVegetarian: true,
+  },
+  
+  // BEVERAGES - MILKSHAKES
+  {
+    id: 78,
+    name: 'Classic Vanilla Shake',
+    description: 'Creamy vanilla ice cream blended to perfection.',
+    price: 6.49,
+    category: 'beverages',
+    subcategory: 'milk-shakes',
+    isVegetarian: true,
+  },
+  {
+    id: 79,
+    name: 'Chocolate Shake',
+    description: 'Rich chocolate ice cream blended with milk and topped with whipped cream.',
+    price: 6.49,
+    category: 'beverages',
+    subcategory: 'milk-shakes',
+    isVegetarian: true,
+  },
+  {
+    id: 80,
+    name: 'Strawberry Shake',
+    description: 'Strawberry ice cream blended with fresh strawberries.',
+    price: 6.99,
+    category: 'beverages',
+    subcategory: 'milk-shakes',
     isVegetarian: true,
   },
 ];
