@@ -5,24 +5,24 @@ import { Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    text: "Best pancakes I've ever had! The blueberry compote is to die for. We come here every weekend with the kids.",
+    name: "Victoria",
+    text: "We visit this spot every time we're in Ocean City. The food and service is sooo good. We've been coming here for the past 12yrs and we've bragged enough about them that we've started bringing family out here just to share this deliciousness with them. My mom, sisters, and nieces love this spot. 10/10 HIGHLY RECOMMENDED. I wish they were located in our home state.",
     rating: 5,
-    image: "/placeholder.svg"
+    //image: "/placeholder.svg"
   },
   {
     id: 2,
-    name: "Mike Thompson",
-    text: "The chicken and waffles changed my life. Perfect balance of sweet and savory. Great service too!",
+    name: "Lori Tharp",
+    text: "Very good food , amazing staff  very clean will definitely be visiting here again. Called ahead and they were able to accommodate our group of 11 in a timely manner",
     rating: 5,
-    image: "/placeholder.svg"
+   // image: "/placeholder.svg"
   },
   {
     id: 3,
-    name: "Lisa Garcia",
-    text: "I'm obsessed with their French toast. The bread is perfectly fluffy and the vanilla custard is amazing.",
+    name: "Peggy Scarbro",
+    text: "Our waitress Marilyn was absolutely amazing. Pleasant,  precise and so very friendly. Tommy the cook is in his wheelhouse. The foid was top notch.  We had a party of 11 women and Marilyn was on her A game . Highly recommend and will be definitely be back. Thank you",
     rating: 5,
-    image: "/placeholder.svg"
+    // image: "/placeholder.svg"
   }
 ];
 
@@ -53,16 +53,15 @@ const TestimonialsSection = () => {
               </div>
               
               <div className="flex items-center mt-4">
-                <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
+              {/* <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name} 
                     className="h-full w-full object-cover"
-                  />
-                </div>
+                  /> 
+                </div>*/}
                 <div>
                   <h4 className="font-semibold text-syrup-800">{testimonial.name}</h4>
-                  <p className="text-sm text-syrup-500">Regular Customer</p>
                 </div>
               </div>
             </div>
@@ -70,14 +69,16 @@ const TestimonialsSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <a 
-            href="#" 
+          <a target="_blank"
+            href="https://www.google.com/maps/place/The+Little+House+Of+Pancakes/@38.3944794,-75.0637823,1188m/data=!3m1!1e3!4m8!3m7!1s0x89b8d678d4690b49:0x58752f4100da46c3!8m2!3d38.3944794!4d-75.0637823!9m1!1b1!16s%2Fg%2F1tdz5qkd?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
             className="inline-flex items-center text-pancake-600 hover:text-pancake-700 font-medium"
           >
-            Read more reviews on Yelp
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            Read more reviews on Google reviews
+             {/*<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
+*/}
+            
           </a>
         </div>
       </div>

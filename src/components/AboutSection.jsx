@@ -11,20 +11,19 @@ const AboutSection = () => {
               Our Pancake Story
             </h2>
             <p className="text-syrup-600 mb-4">
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias tempore voluptate qui cum impedit illum magnam quam obcaecati aut expedita, debitis facere quos ut repellendus eum blanditiis sunt porro animi.
+            Since 2002, Little House of Pancakes has been Ocean City's go-to spot for hearty breakfasts and casual lunches. Family-owned and open year-round, we offer over 20 varieties of pancakes, waffles, omelettes, and more — all made fresh and served all day. Enjoy a relaxed, welcoming atmosphere with indoor and outdoor dining. Whether you're a local or just visiting, we’re here to make you feel right at home with great food and friendly service.
             </p>
-            <p className="text-syrup-600 mb-4">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, rerum facere impedit nobis culpa beatae cumque ex fuga dolorem tempora corrupti et, vitae sit at unde quo error, dolores adipisci.            </p>
-            <p className="text-syrup-600 mb-8">
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in natus sequi reprehenderit repellat autem amet possimus minus ut rem nulla itaque enim distinctio dicta, quia nisi impedit illo excepturi!            </p>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            <p>
+            At Little House of Pancakes, we’re all about comfort, community, and great food. We’re a family-owned spot where every meal is cooked with care, and every guest is treated like family. Whether you're a local regular or a visitor discovering Ocean City for the first time, we invite you to sit back, relax, and dig into a meal that feels like home. Come taste why we’re a favorite tradition for so many — breakfast and lunch just aren't the same anywhere else!
+            </p>
+           
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6 mt-5">
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-pancake-600 mb-2">35+</span>
+                <span className="block text-3xl font-bold text-pancake-600 mb-2">23+</span>
                 <span className="text-syrup-600 text-sm">Years of Service</span>
               </div>
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-pancake-600 mb-2">20+</span>
+                <span className="block text-3xl font-bold text-pancake-600 mb-2">100+</span>
                 <span className="text-syrup-600 text-sm">Menu Items</span>
               </div>
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">

@@ -3,6 +3,7 @@ export const menuCategories = [
     id: 'breakfast',
     name: 'Breakfast',
     description: 'Start your day with our delicious breakfast options made with fresh ingredients'
+    
   },
   {
     id: 'lunch',
@@ -15,164 +16,148 @@ export const menuCategories = [
     description: 'Hot and cold drinks to complement your meal'
   }
 ];
-
 export const menuItems = [
   // Breakfast Items
   {
     id: 1,
-    name: 'Classic Buttermilk Pancakes',
-    description: 'Three fluffy homemade buttermilk cakes hot off the griddle. Served with buttery spread and Log Cabin syrup.',
-    price: 9.99,
+    name: 'Original Pancakes (3)',
+    description: 'Three golden, fluffy pancakes made from our signature buttermilk batter. Served with creamy butter and rich maple syrup.',
+    price: 8.99,
     category: 'breakfast',
     tags: ['Bestseller'],
-    isVegetarian: true
+    isVegetarian: true,
   },
   {
     id: 2,
-    name: 'Belgian Waffles',
-    description: 'Golden crisp outside, light and fluffy inside. Served with maple syrup and powdered sugar.',
-    price: 10.99,
+    name: 'Banana Pancakes',
+    description: 'Fresh bananas blended into our batter for a naturally sweet and irresistible flavor.',
+    price: 9.99,
     category: 'breakfast',
-    isVegetarian: true
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 3,
-    name: 'French Toast',
-    description: 'Thick-cut brioche bread dipped in cinnamon vanilla batter. Served with maple syrup and powdered sugar.',
-    price: 10.99,
+    name: 'Pancakes with Fresh Strawberries',
+    description: 'Topped with juicy, hand-picked strawberries and a dollop of whipped cream. A seasonal delight!',
+    price: 11.99,
     category: 'breakfast',
-    isVegetarian: true
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 4,
-    name: 'Country Style Eggs',
-    description: 'Two farm-fresh eggs cooked your way with hash browns and toast.',
-    price: 8.99,
-    category: 'breakfast'
+    name: 'Bacon Pancakes',
+    description: 'Crispy bacon bits folded into our fluffy pancakes for the perfect sweet and savory combination.',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
   },
   {
     id: 5,
-    name: 'Hearty Breakfast Sandwich',
-    description: 'Fried egg, cheddar cheese, and your choice of bacon, ham, or sausage on a toasted English muffin.',
-    price: 9.99,
-    category: 'breakfast'
+    name: 'Yummy Red Velvet Pancakes',
+    description: 'Decadent red velvet pancakes with a hint of cocoa, topped with cream cheese glaze for a dessert-like breakfast.',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 6,
-    name: 'Veggie Omelette',
-    description: 'Four egg omelette with spinach, tomatoes, mushrooms, and Swiss cheese. Served with grilled potatoes and toast.',
-    price: 12.99,
+    name: 'Pecan Pancakes',
+    description: 'Loaded with crunchy pecans for a Southern-inspired breakfast that’s full of flavor.',
+    price: 10.99,
     category: 'breakfast',
-    isVegetarian: true
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 7,
-    name: 'Denver Omelette',
-    description: 'Four egg omelette with ham, bell peppers, onions, and cheddar cheese. Served with grilled potatoes and toast.',
-    price: 13.99,
-    category: 'breakfast'
+    name: 'Pigs In A Blanket',
+    description: 'Savory sausage links wrapped in our golden pancakes. A hearty and satisfying classic.',
+    price: 11.99,
+    category: 'breakfast',
+    tags: [],
   },
   {
     id: 8,
-    name: 'Breakfast Special',
-    description: 'Two eggs any style, two pancakes, two bacon strips, and two sausage links.',
-    price: 14.99,
-    category: 'breakfast'
+    name: 'Nut & Grain Pancakes',
+    description: 'Wholesome multigrain pancakes with a generous sprinkle of pecans for a healthy and delicious start to your day.',
+    price: 11.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
-  
-  // Lunch Items
   {
     id: 9,
-    name: 'Classic Burger',
-    description: '1/3 lb Angus beef patty with lettuce, tomato, pickles, and special sauce on a brioche bun. Served with fries.',
-    price: 13.99,
-    category: 'lunch'
+    name: 'Candy Pancakes',
+    description: 'Choose from Reese’s Pieces, Snickers, M&M’s, or Oreo Cookies & Cream for a fun and indulgent treat.',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 10,
-    name: 'Grilled Chicken Sandwich',
-    description: 'Marinated chicken breast with avocado, bacon, lettuce, and honey mustard on sourdough bread. Served with kettle chips.',
-    price: 12.99,
-    category: 'lunch'
+    name: 'Mini Originals (10)',
+    description: 'Bite-sized versions of our classic pancakes, perfect for sharing or enjoying on your own.',
+    price: 8.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 11,
-    name: 'Garden Salad',
-    description: 'Mixed greens, cherry tomatoes, cucumber, red onion, and croutons with your choice of dressing.',
-    price: 9.99,
-    category: 'lunch',
-    isVegetarian: true
+    name: 'Blueberry Pancakes',
+    description: 'Bursting with fresh, juicy blueberries in every bite. A timeless favorite!',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 12,
-    name: 'Soup of the Day',
-    description: 'Chef\'s daily soup creation served with a slice of fresh bread.',
-    price: 6.99,
-    category: 'lunch'
+    name: 'Buckwheat Pancakes',
+    description: 'Hearty and wholesome buckwheat pancakes with a rich, nutty flavor. Perfect for the adventurous eater.',
+    price: 14.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 13,
-    name: 'Veggie Wrap',
-    description: 'Hummus, roasted vegetables, mixed greens, and feta cheese in a spinach tortilla. Served with side salad.',
-    price: 11.99,
-    category: 'lunch',
-    isVegetarian: true
+    name: 'Chocolate Chip Pancakes',
+    description: 'Loaded with premium Guittard semi-sweet chocolate chips for a sweet and satisfying breakfast.',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 14,
-    name: 'Fish & Chips',
-    description: 'Beer-battered cod with tartar sauce and crispy fries.',
-    price: 15.99,
-    category: 'lunch'
+    name: 'Fruit Topped Pancakes',
+    description: 'Your choice of apple, strawberry, or peach compote, topped with whipped cream for a fruity delight.',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
-
-  // Beverages
   {
     id: 15,
-    name: 'Coffee',
-    description: 'Locally roasted, bottomless cup.',
-    price: 2.99,
-    category: 'beverages',
-    isVegetarian: true
+    name: 'Sweet Potato Cakes',
+    description: 'A local specialty made with sweet potatoes for a unique and flavorful breakfast experience.',
+    price: 14.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
   {
     id: 16,
-    name: 'Orange Juice',
-    description: 'Freshly squeezed.',
-    price: 3.99,
-    category: 'beverages',
-    isVegetarian: true
+    name: 'Pineapple Upside Down Pancakes',
+    description: 'Topped with caramelized pineapple slices and a Maraschino cherry for a tropical twist.',
+    price: 10.99,
+    category: 'breakfast',
+    tags: [],
+    isVegetarian: true,
   },
-  {
-    id: 17,
-    name: 'Milk',
-    description: 'Cold and refreshing.',
-    price: 2.49,
-    category: 'beverages',
-    isVegetarian: true
-  },
-  {
-    id: 18,
-    name: 'Hot Chocolate',
-    description: 'Rich and creamy with whipped cream.',
-    price: 3.49,
-    category: 'beverages',
-    isVegetarian: true
-  },
-  {
-    id: 19,
-    name: 'Iced Tea',
-    description: 'Freshly brewed and sweetened or unsweetened.',
-    price: 2.99,
-    category: 'beverages',
-    isVegetarian: true
-  },
-  {
-    id: 20,
-    name: 'Fresh Lemonade',
-    description: 'Homemade with real lemons and cane sugar.',
-    price: 3.49,
-    category: 'beverages',
-    isVegetarian: true
-  }
 ];
