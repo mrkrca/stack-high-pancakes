@@ -1,16 +1,45 @@
+
 import React, { useState, useEffect } from 'react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { EggFried, Utensils } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
+  const [activeSubcategory, setActiveSubcategory] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
-    setFilteredItems(menuItems.filter(item => item.category === activeCategory));
-  }, [activeCategory]);
+    // Reset subcategory when changing main category
+    setActiveSubcategory('');
+    
+    // Filter items based on category and subcategory
+    const filtered = menuItems.filter(item => {
+      if (activeSubcategory) {
+        return item.category === activeCategory && item.subcategory === activeSubcategory;
+      }
+      return item.category === activeCategory;
+    });
+    
+    setFilteredItems(filtered);
+  }, [activeCategory, activeSubcategory]);
+
+  const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
+
+  // Function to get appropriate icon for subcategory
+  const getSubcategoryIcon = (subcategoryId) => {
+    switch (subcategoryId) {
+      case 'country-eggs':
+        return <EggFried className="mr-2" />;
+      case 'sides':
+        return <Utensils className="mr-2" />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <section id="menu" className="py-20 bg-white text-gray-800">
@@ -23,8 +52,8 @@ const MenuSection = () => {
           </p>
         </div>
         
-        {/* Menu Categories Navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Main Categories Navigation */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {menuCategories.map(category => (
             <Button
               key={category.id}
@@ -32,23 +61,50 @@ const MenuSection = () => {
               variant={activeCategory === category.id ? "default" : "outline"}
               className={`px-6 py-3 text-lg ${
                 activeCategory === category.id
-                  ? 'bg-pancake-500 hover:bg-pancake-600 text-white'
-                  : 'text-syrup-600 hover:text-syrup-800 border-syrup-300 hover:border-syrup-500'
+                  ? 'bg-amber-500 hover:bg-amber-600 text-white'
+                  : 'text-amber-700 hover:text-amber-800 border-amber-300 hover:border-amber-500'
               }`}
             >
               {category.name}
             </Button>
           ))}
         </div>
+
+        {/* Subcategories for Breakfast */}
+        {activeCategory === 'breakfast' && currentCategory?.subcategories && (
+          <div className="mb-8">
+            <Tabs defaultValue={activeSubcategory} onValueChange={setActiveSubcategory}>
+              <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
+                {currentCategory.subcategories.map((sub) => (
+                  <TabsTrigger
+                    key={sub.id}
+                    value={sub.id}
+                    className={`flex items-center px-4 py-2 rounded-full transition-colors
+                      ${activeSubcategory === sub.id 
+                        ? 'bg-amber-100 text-amber-800' 
+                        : 'hover:bg-amber-50'}`}
+                  >
+                    {getSubcategoryIcon(sub.id)}
+                    {sub.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
+          </div>
+        )}
         
         {/* Category Description */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-pancake-600 mb-3">
-            {menuCategories.find(cat => cat.id === activeCategory)?.name}
+          <h3 className="text-2xl font-bold text-amber-700 mb-3">
+            {activeSubcategory 
+              ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.name
+              : currentCategory?.name}
           </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            {menuCategories.find(cat => cat.id === activeCategory)?.description}
-          </p>
+          {!activeSubcategory && (
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {currentCategory?.description}
+            </p>
+          )}
         </div>
         
         {/* Menu Items Grid */}
@@ -56,17 +112,17 @@ const MenuSection = () => {
           {filteredItems.map(item => (
             <Card 
               key={item.id} 
-              className="bg-white border-syrup-200 hover:shadow-lg transition-all duration-300"
+              className="bg-white border-amber-200 hover:shadow-lg transition-all duration-300"
             >
               <CardHeader className="pb-3">
                 <div className="flex justify-between items-start">
-                  <CardTitle className="text-syrup-800 flex items-center">
+                  <CardTitle className="text-amber-800 flex items-center">
                     {item.name}
                     {item.isVegetarian && (
                       <span className="ml-2 inline-block w-4 h-4 bg-green-500 rounded-full" title="Vegetarian"></span>
                     )}
                   </CardTitle>
-                  <span className="font-bold text-pancake-600">${item.price.toFixed(2)}</span>
+                  <span className="font-bold text-amber-600">${item.price.toFixed(2)}</span>
                 </div>
                 {item.tags && item.tags.length > 0 && (
                   <div className="flex gap-2 mt-1">
@@ -74,7 +130,7 @@ const MenuSection = () => {
                       <Badge 
                         key={tag}
                         variant="outline"
-                        className="bg-pancake-100 text-pancake-800 border-pancake-300"
+                        className="bg-amber-100 text-amber-800 border-amber-300"
                       >
                         {tag}
                       </Badge>

@@ -2,8 +2,17 @@ export const menuCategories = [
   {
     id: 'breakfast',
     name: 'Breakfast',
-    description: 'Start your day with our delicious breakfast options made with fresh ingredients'
-    
+    description: 'Start your day with our delicious breakfast options made with fresh ingredients',
+    subcategories: [
+      { id: 'pancakes', name: 'Pancakes' },
+      { id: 'country-eggs', name: 'Country Style Eggs' },
+      { id: 'sandwiches', name: 'Hearty Breakfast Sandwiches' },
+      { id: 'waffles', name: 'Belgian Waffles' },
+      { id: 'french-toast', name: 'French Toast' },
+      { id: 'specials', name: 'Daybreak Breakfast Specials' },
+      { id: 'omelettes', name: '4 Egg Omelettes' },
+      { id: 'sides', name: 'Side Orders' }
+    ]
   },
   {
     id: 'lunch',
@@ -16,17 +25,86 @@ export const menuCategories = [
     description: 'Hot and cold drinks to complement your meal'
   }
 ];
+
 export const menuItems = [
-  // Breakfast Items
+  // Pancakes
   {
     id: 1,
     name: 'Original Pancakes (3)',
     description: 'Three golden, fluffy pancakes made from our signature buttermilk batter. Served with creamy butter and rich maple syrup.',
     price: 8.99,
     category: 'breakfast',
+    subcategory: 'pancakes',
     tags: ['Bestseller'],
     isVegetarian: true,
   },
+  // Country Style Eggs
+  {
+    id: 20,
+    name: 'Farm Fresh Eggs',
+    description: 'Two farm-fresh eggs cooked your way, served with hash browns and choice of toast.',
+    price: 9.99,
+    category: 'breakfast',
+    subcategory: 'country-eggs',
+    isVegetarian: true,
+  },
+  // Breakfast Sandwich
+  {
+    id: 21,
+    name: 'Classic Breakfast Sandwich',
+    description: 'Fried egg, crispy bacon, cheddar cheese, and fresh lettuce on toasted bread.',
+    price: 10.99,
+    category: 'breakfast',
+    subcategory: 'sandwiches',
+  },
+  // Belgian Waffle
+  {
+    id: 22,
+    name: 'Classic Belgian Waffle',
+    description: 'Light and crispy Belgian waffle topped with whipped cream and fresh berries.',
+    price: 11.99,
+    category: 'breakfast',
+    subcategory: 'waffles',
+    isVegetarian: true,
+  },
+  // French Toast
+  {
+    id: 23,
+    name: 'Cinnamon French Toast',
+    description: 'Thick-cut brioche bread dipped in our special batter, grilled golden brown.',
+    price: 10.99,
+    category: 'breakfast',
+    subcategory: 'french-toast',
+    isVegetarian: true,
+  },
+  // Breakfast Special
+  {
+    id: 24,
+    name: 'Morning Glory Special',
+    description: 'Two eggs any style, two pancakes, bacon or sausage, and hash browns.',
+    price: 13.99,
+    category: 'breakfast',
+    subcategory: 'specials',
+  },
+  // Omelette
+  {
+    id: 25,
+    name: 'Denver Omelette',
+    description: 'Four eggs with ham, bell peppers, onions, and cheddar cheese.',
+    price: 12.99,
+    category: 'breakfast',
+    subcategory: 'omelettes',
+  },
+  // Side Order
+  {
+    id: 26,
+    name: 'Crispy Bacon',
+    description: 'Four strips of premium crispy bacon.',
+    price: 4.99,
+    category: 'breakfast',
+    subcategory: 'sides',
+  },
+  // Breakfast Items
   {
     id: 2,
     name: 'Banana Pancakes',
