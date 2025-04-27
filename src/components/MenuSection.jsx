@@ -74,7 +74,7 @@ const MenuSection = () => {
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-syrup-600 mb-4">Our Menu</h2>
+          <h2 className="text-5xl sm:text-5xl md:text-6xl font-bold text-syrup-600 mb-4">Our Menu</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             All our dishes are made fresh to order with locally sourced ingredients. 
             Gluten-free options available upon request.
