@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -132,7 +133,7 @@ const MenuSection = () => {
                         <span className="ml-2 inline-block w-4 h-4 bg-green-500 rounded-full" title="Vegetarian"></span>
                       )}
                     </CardTitle>
-                    <span className="font-bold text-amber-600 ml-auto">${item.price.toFixed(2)}</span>
+                    <span className="font-bold text-amber-600 ml-auto relative top-7 ">${item.price.toFixed(2)}</span>
                   </div>
                   {item.tags && item.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-1">
