@@ -40,27 +40,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#about" className="text-syrup-700 hover:text-pancake-600 font-medium transition">About</a>
             <a href="#location" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Location</a>
-            
-            {/* Menu Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="inline-flex items-center bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2 rounded-md font-semibold transition-colors">
-                Menu <ChevronDown className="ml-2 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border border-border shadow-lg">
-                <DropdownMenuItem>
-                  <a href="#menu" className="w-full">All Menu</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#menu" className="w-full" onClick={() => document.getElementById('breakfast-tab')?.click()}>Breakfast</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#menu" className="w-full" onClick={() => document.getElementById('lunch-tab')?.click()}>Lunch</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <a href="#menu" className="w-full" onClick={() => document.getElementById('beverages-tab')?.click()}>Beverages</a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <a href="#menu" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Menu</a>
           </nav>
 
           {/* Phone Number */}

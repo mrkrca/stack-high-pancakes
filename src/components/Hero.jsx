@@ -23,13 +23,13 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
-          Breakfast 
+          Little Breakfast 
           <span className="text-pancake-300 block md:inline"> Paradise </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-white mb-8 max-w-xl mx-auto drop-shadow-md">
+       {/* <p className="text-xl md:text-2xl text-white mb-8 max-w-xl mx-auto drop-shadow-md">
           Delicious handcrafted pancakes, waffles, and breakfast favorites made fresh daily
-        </p>
+        </p>*/}
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
 
