@@ -149,7 +149,7 @@ const MenuSection = () => {
             {filteredItems.map(item => (
               <Card 
                 key={item.id} 
-                className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 "
+                className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 border rounded-lg cursor-pointer "
               >
                 <CardHeader className="pb-1">
                   <div className="flex justify-between items-start">
@@ -167,7 +167,7 @@ const MenuSection = () => {
                         <Badge 
                           key={tag}
                           variant="outline"
-                          className="bg-amber-100 text-amber-800 border-amber-300"
+                          className="bg-amber-100 text-amber-800 border-amber-300 p-1"
                         >
                           {tag}
                         </Badge>
