@@ -1,36 +1,32 @@
-
 import React, { useState, useEffect } from 'react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-//import { Coffee, Utensils, Pizza, Sandwich, ArrowUp } from 'lucide-react';
+import BestsellerRibbon from './BestsellerRibbon';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
   const [activeSubcategory, setActiveSubcategory] = useState('pancakes');
   const [filteredItems, setFilteredItems] = useState([]);
 
-  // Helper function to get the first subcategory of a category
   const getFirstSubcategory = (categoryId) => {
     const category = menuCategories.find(cat => cat.id === categoryId);
     return category?.subcategories?.[0]?.id || '';
   };
 
-  // Handle category change and set initial subcategory
   const handleCategoryClick = (categoryId) => {
     setActiveCategory(categoryId);
     
-    // Set default subcategory based on category
     let initialSubcategory = '';
     
     if (categoryId === 'breakfast') {
       initialSubcategory = 'pancakes';
     } else if (categoryId === 'lunch') {
-      initialSubcategory = 'burgers'; // First subcategory of lunch
+      initialSubcategory = 'burgers';
     } else if (categoryId === 'beverages') {
-      initialSubcategory = 'coffee'; // First subcategory of beverages
+      initialSubcategory = 'coffee';
     } else {
       initialSubcategory = getFirstSubcategory(categoryId);
     }
@@ -39,7 +35,6 @@ const MenuSection = () => {
   };
 
   useEffect(() => {
-    // Filter items based on category and subcategory
     const filtered = menuItems.filter(item => {
       if (activeSubcategory) {
         return item.category === activeCategory && item.subcategory === activeSubcategory;
@@ -51,25 +46,7 @@ const MenuSection = () => {
   }, [activeCategory, activeSubcategory]);
 
   const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
-/*
-  // Function to get appropriate icon for subcategory
-  const getSubcategoryIcon = (subcategoryId) => {
-    switch (subcategoryId) {
-      case 'pancakes':
-        return <Pizza className="mr-2" />;
-      case 'country-eggs':
-        return <ArrowUp className="mr-2" />;
-      case 'sandwiches':
-        return <Sandwich className="mr-2" />;
-      case 'burgers':
-        return <Utensils className="mr-2" />;
-      case 'coffee':
-        return <Coffee className="mr-2" />;
-      default:
-        return null;
-    }
-  };
-*/
+
   return (
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
@@ -81,7 +58,6 @@ const MenuSection = () => {
           </p>
         </div>
         
-        {/* Main Categories Navigation */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {menuCategories.map(category => (
             <Button
@@ -99,7 +75,6 @@ const MenuSection = () => {
           ))}
         </div>
 
-        {/* Subcategories for Current Category */}
         {currentCategory?.subcategories && currentCategory.subcategories.length > 0 && (
           <div className="mb-8">
             <Tabs 
@@ -116,7 +91,6 @@ const MenuSection = () => {
                         ? 'bg-amber-100 text-amber-800' 
                         : 'hover:bg-amber-50'}`}
                   >
-                    {/*getSubcategoryIcon(sub.id)*/}
                     {sub.name}
                   </TabsTrigger>
                 ))}
@@ -125,7 +99,6 @@ const MenuSection = () => {
           </div>
         )}
         
-        {/* Category Description */}
         <div className="text-center mb-12">
           <h3 className="text-2xl font-bold text-amber-700 mb-3">
             {activeSubcategory 
@@ -143,14 +116,14 @@ const MenuSection = () => {
           </div>
         </div>
         
-        {/* Menu Items Grid */}
         {filteredItems.length > 0 ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             {filteredItems.map(item => (
               <Card 
                 key={item.id} 
-                className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 border rounded-lg cursor-pointer "
+                className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 border rounded-lg cursor-pointer relative overflow-hidden"
               >
+                {item.isBestseller && <BestsellerRibbon />}
                 <CardHeader className="pb-1">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-amber-800 flex items-center">
