@@ -15,7 +15,7 @@ export const menuCategories = [
           'Strawberry, blueberry, and sugar-free syrup available.',
           'Add a scoop of vanilla ice cream: $1.99.',
           'Add Nutella Hazelnut Cocoa spread: $1.00.',
-          'Gluten-free buttermilk pancakes available: Add $1.99.',
+          'Gluten-free buttermilk pancakes available for $1.99.',
         ],
       },
       {
@@ -141,13 +141,13 @@ export const menuItems = [
   {
     id: 1,
     name: 'Original Pancakes (3)',
-    description: 'Home style pancakes',
+    description: 'Home style pancakes. Gluten free available for $1.99 extra.',
     price: 8.99,
     category: 'breakfast',
     subcategory: 'pancakes',
     tags: ['Gluten-Free'],
     isBestseller: true,
-    isVegetarian: true,
+   
   },
   {
     id: 2,
@@ -156,7 +156,7 @@ export const menuItems = [
     price: 9.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
     id: 3,
@@ -165,7 +165,7 @@ export const menuItems = [
     price: 11.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
     id: 4,
@@ -182,7 +182,7 @@ export const menuItems = [
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    
   },
   {
     id: 6,
@@ -191,7 +191,7 @@ export const menuItems = [
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    
   },
   {
     id: 7,
@@ -200,7 +200,7 @@ export const menuItems = [
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
     id: 8,
@@ -209,7 +209,7 @@ export const menuItems = [
     price: 11.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
     id: 9,
@@ -218,7 +218,7 @@ export const menuItems = [
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
     id: 10,
@@ -227,71 +227,62 @@ export const menuItems = [
     price: 8.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    
   },
 
   {
     id: 11,
     name: 'Blueberry Pancakes',
-    description: 'Home style pancakes, but mini.',
-    price: 10.99,
-    category: 'breakfast',
-    subcategory: 'pancakes',
-    isVegetarian: true,
-  },
-  {
-    id: 12,
-    name: 'Blueberry Pancakes',
     description: 'Country fresh berries nestled here in these cakes',
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
-    id: 13,
+    id: 12,
     name: 'Buckwheat Pancakes',
     description: 'Range riding cakes.',
     price: 14.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    tags: ['Gluten-Free'],
   },
   {
-    id: 14,
+    id: 13,
     name: 'Chocolate Chip Pancakes',
     description: 'A big or small kid’s favorite using Guittard semi sweet chocolate chips',
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+   
   },
   {
-    id: 15,
+    id: 14,
     name: 'Fruit Topped Pancakes',
     description: 'Your choice of apple, strawberry or peach compote with whipped cream',
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    
   },
   {
-    id: 16,
+    id: 15,
     name: 'Sweet Potato Cakes',
     description: 'A specialty here on the shore',
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    
   },
   {
-    id: 17,
+    id: 16,
     name: 'Pineapple Upside Down Pancakes',
     description: 'Served with a slice of grilled pineapple and Maraschino cherry in each pancake. A real tropical treat',
     price: 10.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    isVegetarian: true,
+    
   },
 
 
@@ -304,7 +295,7 @@ export const menuItems = [
     price: 8.99,
     category: 'breakfast',
     subcategory: 'country-eggs',
-    isVegetarian: true,
+    isBestseller: true,
   },
   {
     id: 21,
@@ -324,6 +315,7 @@ export const menuItems = [
     price: 9.99,
     category: 'breakfast',
     subcategory: 'sandwiches',
+    isBestseller: true,
   },
   {
     id: 31,
@@ -357,7 +349,8 @@ export const menuItems = [
     price: 9.99,
     category: 'breakfast',
     subcategory: 'sandwiches',
-    isVegetarian: true,
+    tags: ['Vegetarian'],
+   
   },
   {
     id: 35,
@@ -366,7 +359,7 @@ export const menuItems = [
     price: 12.99,
     category: 'breakfast',
     subcategory: 'sandwiches',
-    isVegetarian: false,
+    
   },
   
 
@@ -384,7 +377,7 @@ export const menuItems = [
     price: 11.99,
     category: 'breakfast',
     subcategory: 'waffles',
-   
+    isBestseller: true,
   },
   {
     id: 41,
@@ -461,6 +454,7 @@ export const menuItems = [
     price: 8.99,
     category: 'breakfast',
     subcategory: 'french-toast',
+    isBestseller: true,
    
   },
   {
@@ -497,6 +491,7 @@ export const menuItems = [
     price: 13.99,
     category: 'breakfast',
     subcategory: 'specials',
+    isBestseller: true,
   },
   {
     id: 61,
@@ -543,6 +538,7 @@ export const menuItems = [
     price: 12.99,
     category: 'breakfast',
     subcategory: 'omelettes',
+    isBestseller: true,
   },
   {
     id: 71,
@@ -644,7 +640,7 @@ export const menuItems = [
     price: 13.99,
     category: 'breakfast',
     subcategory: 'omelettes',
-    isVegetarian: true,
+   
   },
   {
     id: 82,
@@ -653,7 +649,7 @@ export const menuItems = [
     price: 13.99,
     category: 'breakfast',
     subcategory: 'omelettes',
-    isVegetarian: true,
+    
   },
   {
     id: 83,
@@ -662,7 +658,7 @@ export const menuItems = [
     price: 14.99,
     category: 'breakfast',
     subcategory: 'omelettes',
-    isVegetarian: true,
+    
   },
   {
     id: 84,
@@ -671,7 +667,7 @@ export const menuItems = [
     price: 14.99,
     category: 'breakfast',
     subcategory: 'omelettes',
-    isVegetarian: true,
+   
   },
   {
     id: 85,
@@ -680,7 +676,7 @@ export const menuItems = [
     price: 14.99,
     category: 'breakfast',
     subcategory: 'omelettes',
-    isVegetarian: true,
+   
   },
   {
     id: 86,
@@ -689,7 +685,7 @@ export const menuItems = [
     price: 14.99,
     category: 'breakfast',
     subcategory: 'omelettes',
-    isVegetarian: true,
+   
   },
 
 
@@ -711,6 +707,7 @@ export const menuItems = [
     price: 5.99,
     category: 'breakfast',
     subcategory: 'sides',
+    isBestseller: true,
   },
   {
     id: 92,
@@ -737,7 +734,8 @@ export const menuItems = [
     price: 1.99,
     category: 'breakfast',
     subcategory: 'sides',
-    isVegetarian: true,
+    tags: ['Gluten-Free'],
+   
   },
   {
     id: 95,
@@ -755,6 +753,7 @@ export const menuItems = [
     price: 3.99,
     category: 'breakfast',
     subcategory: 'sides',
+    tags: ['Gluten-Free'],
    
   },
   {
@@ -821,7 +820,9 @@ export const menuItems = [
     price: 3.99,
     category: 'breakfast',
     subcategory: 'sides',
-    isVegetarian: true,
+    tags: ['Gluten-Free', 'Vegetarian'],
+    
+   
   },
 
   {
@@ -831,7 +832,7 @@ export const menuItems = [
     price: 7.99,
     category: 'breakfast',
     subcategory: 'sides',
-  
+    tags: ['Gluten-Free', 'Vegetarian'],
   },
 
 
@@ -843,6 +844,7 @@ export const menuItems = [
     price: 7.99,
     category: 'lunch',
     subcategory: 'appetizers',
+    isBestseller: true,
   },
   {
     id: 111,
@@ -974,6 +976,7 @@ export const menuItems = [
     price: 13.99,
     category: 'lunch',
     subcategory: 'sandwiches',
+    isBestseller: true,
    
   },
 
@@ -986,6 +989,8 @@ export const menuItems = [
     price: 9.99,
     category: 'lunch',
     subcategory: 'salads',
+    tags: ['Gluten-Free', 'Vegetarian'],
+    isBestseller: true,
    
   },
   {
@@ -995,6 +1000,7 @@ export const menuItems = [
     price: 13.99,
     category: 'lunch',
     subcategory: 'salads',
+    tags: ['Gluten-Free', ],
   },
 
 
@@ -1006,6 +1012,7 @@ export const menuItems = [
     price: 12.99,
     category: 'lunch',
     subcategory: 'platters',
+    isBestseller: true,
    
   },
   {
@@ -1027,6 +1034,7 @@ export const menuItems = [
   price: 16.99,
   category: 'lunch',
   subcategory: 'subs',
+  isBestseller: true,
 },
 {
   id: 151,
@@ -1035,6 +1043,7 @@ export const menuItems = [
   price: 16.99,
   category: 'lunch',
   subcategory: 'subs',
+  isBestseller: true,
 },
 {
   id: 152,
@@ -1044,14 +1053,7 @@ export const menuItems = [
   category: 'lunch',
   subcategory: 'subs',
 },
-{
-  id: 153,
-  name: 'Zesty Chicken',
-  description: 'A hot grilled chicken breast topped with American cheese, lettuce, and tomato.',
-  price: 16.99,
-  category: 'lunch',
-  subcategory: 'subs',
-},
+
 
 
 
@@ -1064,6 +1066,7 @@ export const menuItems = [
     price: 15.99,
     category: 'lunch',
     subcategory: 'burgers',
+    isBestseller: true,
   },
   {
     id: 161,
@@ -1096,7 +1099,8 @@ export const menuItems = [
     price: 14.99,
     category: 'lunch',
     subcategory: 'burgers',
-    isVegetarian: true,
+    tags: ['Gluten-Free', 'Vegetarian'],
+    
   },
 
  {
@@ -1106,7 +1110,7 @@ export const menuItems = [
     price: 15.99,
     category: 'lunch',
     subcategory: 'burgers',
-    isVegetarian: false,
+   
   },
   
 
@@ -1119,6 +1123,7 @@ export const menuItems = [
     price: 11.99,
     category: 'lunch',
     subcategory: 'desserts',
+    isBestseller: true,
     
   },
   {
@@ -1149,6 +1154,7 @@ export const menuItems = [
     price: 8.99,
     category: 'beverages',
     subcategory: 'coffee',
+    isBestseller: true,
    
   },
   {

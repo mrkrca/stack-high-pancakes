@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import BestsellerRibbon from './BestsellerRibbon';
+import { WheatOff, Vegan } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
@@ -136,18 +137,22 @@ const MenuSection = () => {
                     <span className="font-bold text-amber-600 ml-auto relative top-7 ">${item.price.toFixed(2)}</span>
                   </div>
                   {item.tags && item.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-1">
-                      {item.tags.map(tag => (
-                        <Badge 
-                          key={tag}
-                          variant="outline"
-                          className="bg-amber-100 text-amber-800 border-amber-300 p-1"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {item.tags.map(tag => (
+                      <Badge 
+                      key={tag}
+                      variant="outline"
+                      className="bg-amber-100 text-amber-800 border-amber-300 p-1 flex items-center gap-1"
+                    >
+                      
+                      {tag === 'Gluten-Free' && <WheatOff className="w-4 h-4 text-amber-800" />}
+                      {tag === 'Vegetarian' && <Vegan className="w-4 h-4 text-green-600" />}
+                      {tag}
+                    </Badge>
+                      
+                    ))}
+                  </div>
+                )}
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">{item.description}</p>
