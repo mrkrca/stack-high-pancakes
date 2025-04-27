@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';

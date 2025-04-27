@@ -1,4 +1,3 @@
-
 import { Ribbon } from "lucide-react";
 
 const BestsellerRibbon = () => {

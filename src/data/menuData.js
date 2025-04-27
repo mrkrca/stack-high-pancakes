@@ -145,7 +145,8 @@ export const menuItems = [
     price: 8.99,
     category: 'breakfast',
     subcategory: 'pancakes',
-    tags: ['Bestseller'],
+    tags: ['Gluten-Free'],
+    isBestseller: true,
     isVegetarian: true,
   },
   {
@@ -1242,7 +1243,7 @@ export const menuItems = [
     
   },
   {
-    id: 191,
+    id: 433,
     name: 'Margarita ',
     description: 'Frozen or on the rocks, this will help you beat the heat!',
     price: 11.99,
