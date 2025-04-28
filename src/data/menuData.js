@@ -1317,7 +1317,7 @@ export const menuItems = [
     
   },
   {
-    id: 212,
+    id: 213,
     name: 'Fresh Fruit Cup Smoothie ',
     description: 'Mandarin oranges, kiwi, grapes, bananas, and strawberries blended together',
     price: 9.99,
