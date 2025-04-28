@@ -54,7 +54,7 @@ const Hero = () => {
             <span className="text-white font-medium drop-shadow-md">Open Daily</span>
             <span className="text-white/90 text-sm drop-shadow-sm">8am - 1pm</span>
           </div>
-          
+          <a href="#location">
           <div className="flex flex-col items-center">
             <div className="bg-white/80 backdrop-blur-sm rounded-full p-3 mb-2 text-pancake-600">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,9 @@ const Hero = () => {
             <span className="text-white font-medium drop-shadow-md">Location</span>
             <span className="text-white/90 text-sm drop-shadow-sm">Ocean City, MD</span>
           </div>
-          
+          </a>
+         
+          <a href="https://www.google.com/maps/place/The+Little+House+Of+Pancakes/@38.3944794,-75.0637823,1188m/data=!3m1!1e3!4m8!3m7!1s0x89b8d678d4690b49:0x58752f4100da46c3!8m2!3d38.3944794!4d-75.0637823!9m1!1b1!16s%2Fg%2F1tdz5qkd?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" target='_blank'>
           <div className="flex flex-col items-center">
             <div className="bg-white/80 backdrop-blur-sm rounded-full p-3 mb-2 text-pancake-600">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,6 +77,8 @@ const Hero = () => {
             <span className="text-white font-medium drop-shadow-md">Rated</span>
             <span className="text-white/90 text-sm drop-shadow-sm">4.3/5 Stars</span>
           </div>
+          </a>
+       
         </div>
       </div>
       

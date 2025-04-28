@@ -4,8 +4,12 @@ import 'leaflet/dist/leaflet.css';
 import { MapPin, Phone, Clock, Mail } from 'lucide-react';
 import L from 'leaflet';
 import './location.css';
+import AOS from 'aos';
+import { useEffect } from 'react';
+import 'aos/dist/aos.css';
 
-// Fix for default Leaflet marker icons
+
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -16,6 +20,10 @@ L.Icon.Default.mergeOptions({
 const LocationSection = () => {
   const restaurantLocation = [38.394601296380166, -75.06376084768533]; // Latitude and Longitude for Ocean City, MD
 
+    useEffect(() => {
+      AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
+    }, []);
+  
   return (
     <section id="location" className="py-20 bg-white ">
       <div className="container mx-auto px-4 ">
@@ -28,7 +36,7 @@ const LocationSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8  items-center" >
           {/* Map Section */}
-          <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 z-10"> 
+          <div  data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 z-10"> 
             <MapContainer
               center={restaurantLocation}
               zoom={15}
@@ -51,7 +59,7 @@ const LocationSection = () => {
           </div>
 
           {/* Contact Information Section */}
-          <div className="lg:col-span-2 flex flex-col justify-center">
+          <div className="lg:col-span-2 flex flex-col justify-center"  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
             <div className="bg-pancake-100 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-syrup-800 mb-6">Contact Information</h3>
 

@@ -26,7 +26,7 @@ const MenuSection = () => {
     if (categoryId === 'breakfast') {
       initialSubcategory = 'pancakes';
     } else if (categoryId === 'lunch') {
-      initialSubcategory = 'burgers';
+      initialSubcategory = 'appetizers';
     } else if (categoryId === 'beverages') {
       initialSubcategory = 'coffee';
     } else {
