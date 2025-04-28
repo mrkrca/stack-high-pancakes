@@ -7,7 +7,9 @@
 @tailwind utilities;
 
 @layer base {
+  
   :root {
+    overflow-x: hidden;
     --background: 32 100% 98%;
     --foreground: 40 21% 20%;
 
@@ -37,8 +39,11 @@
     --ring: 33 100% 62%;
 
     --radius: 0.5rem;
+
+    
   }
 
+  
   * {
     @apply border-border;
   }
