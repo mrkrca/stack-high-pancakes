@@ -20,7 +20,7 @@ const AboutSection = () => {
   <h3 className="text-lg font-semibold text-syrup-700 mb-3">Visit Us On Social Media</h3>
   <div className="flex justify-center space-x-4">
     <a 
-      href="https://facebook.com" 
+      href="https://www.facebook.com/p/The-Little-House-of-Pancakes-Ribs-and-Pizza-100063501162532/" 
       target="_blank" 
       rel="noopener noreferrer" 
       className="bg-syrup-800 text-white p-3 rounded-full hover:bg-pancake-500 transition-colors"
@@ -28,7 +28,7 @@ const AboutSection = () => {
       <Facebook size={20} />
     </a>
     <a 
-      href="https://twitter.com" 
+      href="https://x.com/LilHousePancake" 
       target="_blank" 
       rel="noopener noreferrer" 
       className="bg-syrup-800 text-white p-3 rounded-full hover:bg-pancake-500 transition-colors"
@@ -36,7 +36,7 @@ const AboutSection = () => {
       <Twitter size={20} />
     </a>
     <a 
-      href="https://instagram.com" 
+      href="https://www.instagram.com/oc_pancake_house/" 
       target="_blank" 
       rel="noopener noreferrer" 
       className="bg-syrup-800 text-white p-3 rounded-full hover:bg-pancake-500 transition-colors"
