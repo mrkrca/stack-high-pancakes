@@ -36,7 +36,7 @@ const LocationSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8  items-center" >
           {/* Map Section */}
-          <div  data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 z-10"> 
+          <div  data-aos="fade-right"  className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg h-96 z-10"> 
             <MapContainer
               center={restaurantLocation}
               zoom={15}
@@ -59,7 +59,7 @@ const LocationSection = () => {
           </div>
 
           {/* Contact Information Section */}
-          <div className="lg:col-span-2 flex flex-col justify-center"  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
+          <div className="lg:col-span-2 flex flex-col justify-center"  data-aos="fade-left" >
             <div className="bg-pancake-100 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-syrup-800 mb-6">Contact Information</h3>
 

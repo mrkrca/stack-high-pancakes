@@ -1,6 +1,12 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
+
+
 
 const testimonials = [
   {
@@ -27,6 +33,11 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  
+ useEffect(() => {
+      AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
+    }, []);
+
   return (
     <section className="py-20 bg-pancake-50">
       <div className="container mx-auto px-4">
@@ -37,7 +48,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
           {testimonials.map(testimonial => (
             <div 
               key={testimonial.id} 
