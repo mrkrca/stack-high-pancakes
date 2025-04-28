@@ -20,7 +20,7 @@ const MenuSection = () => {
   };
 
   useEffect(() => {
-      AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
+      AOS.init({ duration: 300 }); // Initialize AOS with a duration of 1000ms
     }, []);
   
   const handleCategoryClick = (categoryId) => {
@@ -127,7 +127,7 @@ const MenuSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             {filteredItems.map(item => (
               <Card 
-                data-aos="fade-up"
+                data-aos="slide-up"
                 key={item.id} 
                 className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 border rounded-lg cursor-pointer relative overflow-hidden"
               >
