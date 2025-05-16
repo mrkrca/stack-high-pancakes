@@ -18,33 +18,29 @@
     --popover: 0 0% 100%;
     --popover-foreground: 40 21% 20%;
 
-    --primary: 33 100% 62%;
+    --primary: 45 100% 52%;
     --primary-foreground: 30 60% 10%;
 
-    --secondary: 348 25% 94%;
-    --secondary-foreground: 348 20% 20%;
+    --secondary: 220 72% 33%;
+    --secondary-foreground: 45 100% 52%;
 
     --muted: 40 6% 90%;
     --muted-foreground: 40 8% 40%;
 
-    --accent: 25 95% 53%;
+    --accent: 0 77% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 10% 85%;
+    --border: 220 70% 33%;
     --input: 30 10% 90%;
-    --ring: 33 100% 62%;
+    --ring: 45 100% 52%;
 
-    --radius: 0.5rem;
-
-    
+    --radius: 0.5rem;  
   }
 
-  
   * {
-    
     @apply border-border;
   }
 
@@ -67,6 +63,6 @@
   }
   
   .btn-primary {
-    @apply bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2 rounded-md font-semibold transition-colors;
+    @apply bg-yellow-400 text-blue-900 hover:bg-yellow-500 px-4 py-2 rounded-md font-semibold transition-colors;
   }
 }
