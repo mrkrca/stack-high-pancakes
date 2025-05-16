@@ -90,13 +90,14 @@ const MenuSection = () => {
             >
               <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
                 {currentCategory.subcategories.map((sub) => (
-                  <TabsTrigger
+                                  <TabsTrigger
                     key={sub.id}
                     value={sub.id}
-                    className={`flex items-center px-4 py-2 rounded-full transition-colors
+                    className={`flex items-center px-5 py-2.5 rounded-full transition-all duration-200
+                      border-2 shadow-sm
                       ${activeSubcategory === sub.id 
-                        ? 'bg-amber-100 text-amber-800' 
-                        : 'hover:bg-amber-50'}`}
+                        ? 'bg-amber-500 text-white border-amber-600 shadow-md transform scale-105' 
+                        : 'bg-white text-amber-800 border-amber-300 hover:border-amber-500 hover:bg-amber-50 hover:transform hover:scale-102'}`}
                   >
                     {sub.name}
                   </TabsTrigger>

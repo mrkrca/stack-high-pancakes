@@ -27,9 +27,9 @@ const Hero = () => {
           <span className="text-pancake-300 block md:inline"> Paradise </span>
         </h1>
         
-       {/* <p className="text-xl md:text-2xl text-white mb-8 max-w-xl mx-auto drop-shadow-md">
-          Delicious handcrafted pancakes, waffles, and breakfast favorites made fresh daily
-        </p>*/}
+        <p className="text-xl md:text-2xl text-white mb-8 max-w-xl mx-auto drop-shadow-md">
+          Start Your Day the Delicious Way
+        </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
 
