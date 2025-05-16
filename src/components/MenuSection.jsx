@@ -9,7 +9,6 @@ import BestsellerRibbon from './BestsellerRibbon';
 import { WheatOff, Vegan } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
   const [activeSubcategory, setActiveSubcategory] = useState('pancakes');
@@ -59,7 +58,7 @@ const MenuSection = () => {
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-5xl sm:text-5xl md:text-6xl font-bold text-blue-900 mb-4">Our Menu</h2>
+          <h2 className="text-5xl sm:text-5xl md:text-6xl font-bold text-syrup-600 mb-4">Our Menu</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             All our dishes are made fresh to order with locally sourced ingredients. 
             Gluten-free options available upon request.
@@ -74,8 +73,8 @@ const MenuSection = () => {
               variant={activeCategory === category.id ? "default" : "outline"}
               className={`px-6 py-3 text-lg ${
                 activeCategory === category.id
-                  ? 'bg-yellow-400 hover:bg-yellow-500 text-blue-900'
-                  : 'text-blue-900 hover:text-blue-800 border-blue-300 hover:border-blue-500'
+                  ? 'bg-amber-500 hover:bg-amber-600 text-white'
+                  : 'text-amber-700 hover:text-amber-800 border-amber-300 hover:border-amber-500'
               }`}
             >
               {category.name}
@@ -96,8 +95,8 @@ const MenuSection = () => {
                     value={sub.id}
                     className={`flex items-center px-4 py-2 rounded-full transition-colors
                       ${activeSubcategory === sub.id 
-                        ? 'bg-blue-100 text-blue-800' 
-                        : 'hover:bg-blue-50'}`}
+                        ? 'bg-amber-100 text-amber-800' 
+                        : 'hover:bg-amber-50'}`}
                   >
                     {sub.name}
                   </TabsTrigger>
@@ -108,7 +107,7 @@ const MenuSection = () => {
         )}
         
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-blue-800 mb-3">
+          <h3 className="text-2xl font-bold text-amber-700 mb-3">
             {activeSubcategory 
               ? currentCategory?.subcategories.find(sub => sub.id === activeSubcategory)?.name
               : currentCategory?.name}
@@ -130,18 +129,18 @@ const MenuSection = () => {
               <Card 
                 data-aos="slide-up"
                 key={item.id} 
-                className="bg-white border-blue-300 hover:shadow-2xl transition-all duration-300 border rounded-lg cursor-pointer relative overflow-hidden"
+                className="bg-white border-amber-300 hover:shadow-2xl transition-all duration-300 border rounded-lg cursor-pointer relative overflow-hidden"
               >
                 {item.isBestseller && <BestsellerRibbon />}
                 <CardHeader className="pb-1">
                   <div className="flex justify-between items-start">
-                    <CardTitle className="text-blue-800 flex items-center max-w-[75%]">
+                    <CardTitle className="text-amber-800 flex items-center max-w-[75%]">
                       {item.name}
                       {item.isVegetarian && (
                         <span className="ml-2 inline-block w-4 h-4 bg-green-500 rounded-full" title="Vegetarian"></span>
                       )}
                     </CardTitle>
-                    <span className="font-bold text-red-600 ml-auto relative top-7 ">${item.price.toFixed(2)}</span>
+                    <span className="font-bold text-amber-600 ml-auto relative top-7 ">${item.price.toFixed(2)}</span>
                   </div>
                   {item.tags && item.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -149,10 +148,10 @@ const MenuSection = () => {
                       <Badge 
                       key={tag}
                       variant="outline"
-                      className="bg-blue-100 text-blue-800 border-blue-300 p-1 flex items-center gap-1"
+                      className="bg-amber-100 text-amber-800 border-amber-300 p-1 flex items-center gap-1"
                     >
                       
-                      {tag === 'Gluten-Free' && <WheatOff className="w-4 h-4 text-blue-800" />}
+                      {tag === 'Gluten-Free' && <WheatOff className="w-4 h-4 text-amber-800" />}
                       {tag === 'Vegetarian' && <Vegan className="w-4 h-4 text-green-600" />}
                       {tag}
                     </Badge>
@@ -175,7 +174,7 @@ const MenuSection = () => {
        
       </div>
       <div className="tipPolicy text-center mt-12 text-gray-700">
-        <p className="text-lg font-medium bg-yellow-100 inline-block px-6 py-3 rounded-lg shadow-md border border-yellow-300">
+        <p className="text-lg font-medium bg-amber-100 inline-block px-6 py-3 rounded-lg shadow-md">
           Please NO substitutions. 20% service charge added to parties of 6 or more. Some menu items may be unavailable in off-season.
         </p>
       </div>

@@ -73,11 +73,6 @@ export default {
           700: '#5D4037',
           800: '#4E342E',
           900: '#3E2723'
-        },
-        restaurant: {
-          blue: '#1a4b8e',
-          yellow: '#ffc30b',
-          red: '#dc2626'
         }
       },
       borderRadius: {
