@@ -22,7 +22,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50  transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 shadow-md py-2' : 'bg-white/0 backdrop-blur-sm py-4'
     }`}>
       <div className="container mx-auto px-4">
@@ -38,14 +38,14 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-syrup-700 hover:text-pancake-600 font-medium transition">About</a>
-            <a href="#location" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Location</a>
-            <a href="#menu" className="text-syrup-700 hover:text-pancake-600 font-medium transition">Menu</a>
+            <a href="#about" className="text-syrup-800 hover:text-pancake-600 font-semibold text-lg transition">About</a>
+            <a href="#location" className="text-syrup-800 hover:text-pancake-600 font-semibold text-lg transition">Location</a>
+            <a href="#menu" className="text-syrup-800 hover:text-pancake-600 font-semibold text-lg transition">Menu</a>
           </nav>
 
           {/* Phone Number */}
-          <div className="hidden md:flex items-center space-x-2 text-syrup-700 font-medium">
-            <Phone size={20} className="text-pancake-600" />
+          <div className="hidden md:flex items-center space-x-2 text-syrup-800 font-semibold text-lg">
+            <Phone size={22} className="text-pancake-600" />
             <a href="tel:+14105200407" className="hover:text-pancake-600 transition">
               +1 (410) 520-0407
             </a>
@@ -54,7 +54,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-syrup-700 hover:text-pancake-600 transition"
+            className="md:hidden text-syrup-800 hover:text-pancake-600 transition"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -65,21 +65,21 @@ const Header = () => {
           <nav className="md:hidden py-4 flex flex-col space-y-4 animate-fadeIn bg-white/95 rounded-md shadow-md mt-2">
             <a 
               href="#menu" 
-              className="text-syrup-700 hover:text-pancake-600 font-medium transition px-4"
+              className="text-syrup-800 hover:text-pancake-600 font-semibold transition px-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Menu
             </a>
             <a 
               href="#about" 
-              className="text-syrup-700 hover:text-pancake-600 font-medium transition px-4"
+              className="text-syrup-800 hover:text-pancake-600 font-semibold transition px-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </a>
             <a 
               href="#location" 
-              className="text-syrup-700 hover:text-pancake-600 font-medium transition px-4"
+              className="text-syrup-800 hover:text-pancake-600 font-semibold transition px-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Location
@@ -87,7 +87,7 @@ const Header = () => {
             {/* Phone Number in Mobile Menu */}
             <a 
               href="tel:+14105200407" 
-              className="text-syrup-700 hover:text-pancake-600 font-medium transition flex items-center space-x-2 px-4"
+              className="text-syrup-800 hover:text-pancake-600 font-semibold transition flex items-center space-x-2 px-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               <Phone size={16} className="text-pancake-600" />
