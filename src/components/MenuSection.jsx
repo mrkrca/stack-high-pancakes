@@ -6,9 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import BestsellerRibbon from './BestsellerRibbon';
-import { WheatOff, Vegan } from 'lucide-react';
+import { WheatOff, Vegan, Coffee, Utensils, Sun } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState('breakfast');
   const [activeSubcategory, setActiveSubcategory] = useState('pancakes');
@@ -20,7 +21,7 @@ const MenuSection = () => {
   };
 
   useEffect(() => {
-      AOS.init({ duration: 300 }); // Initialize AOS with a duration of 1000ms
+      AOS.init({ duration: 300 });
     }, []);
   
   const handleCategoryClick = (categoryId) => {
@@ -54,6 +55,27 @@ const MenuSection = () => {
 
   const currentCategory = menuCategories.find(cat => cat.id === activeCategory);
 
+  const categoryCards = [
+    {
+      id: 'breakfast',
+      name: 'Breakfast',
+      icon: Sun,
+      description: 'Try some of the best breakfast in Ocean City featuring over 20 types of pancakes, eggs, omelettes, waffles and a full breakfast menu!'
+    },
+    {
+      id: 'lunch',
+      name: 'Lunch',
+      icon: Utensils,
+      description: 'We are much more than pancakes! Come try some of our amazing sandwiches, burgers, and more!'
+    },
+    {
+      id: 'beverages',
+      name: 'Beverages',
+      icon: Coffee,
+      description: 'We have some tasty frozen & specialty drinks, as well as smoothies!'
+    }
+  ];
+
   return (
     <section id="menu" className="py-20 bg-white text-gray-800">
       <div className="container mx-auto px-4">
@@ -65,21 +87,48 @@ const MenuSection = () => {
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {menuCategories.map(category => (
-            <Button
-              key={category.id}
-              onClick={() => handleCategoryClick(category.id)}
-              variant={activeCategory === category.id ? "default" : "outline"}
-              className={`px-6 py-3 text-lg ${
-                activeCategory === category.id
-                  ? 'bg-amber-500 hover:bg-amber-600 text-white'
-                  : 'text-amber-700 hover:text-amber-800 border-amber-300 hover:border-amber-500'
-              }`}
-            >
-              {category.name}
-            </Button>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
+          {categoryCards.map(category => {
+            const IconComponent = category.icon;
+            return (
+              <Card
+                key={category.id}
+                className={`cursor-pointer transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border-2 ${
+                  activeCategory === category.id
+                    ? 'border-amber-500 bg-amber-50 shadow-lg scale-105'
+                    : 'border-amber-200 hover:border-amber-400 bg-white'
+                }`}
+                onClick={() => handleCategoryClick(category.id)}
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className={`mx-auto mb-4 p-4 rounded-full w-16 h-16 flex items-center justify-center ${
+                    activeCategory === category.id 
+                      ? 'bg-amber-500 text-white' 
+                      : 'bg-amber-100 text-amber-600'
+                  }`}>
+                    <IconComponent size={32} />
+                  </div>
+                  <CardTitle className={`text-2xl font-bold ${
+                    activeCategory === category.id ? 'text-amber-700' : 'text-gray-800'
+                  }`}>
+                    {category.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {category.description}
+                  </p>
+                  <div className={`mt-4 inline-block px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    activeCategory === category.id
+                      ? 'bg-amber-500 text-white'
+                      : 'bg-amber-100 text-amber-700 hover:bg-amber-200'
+                  }`}>
+                    View {category.name} Menu
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {currentCategory?.subcategories && currentCategory.subcategories.length > 0 && (
@@ -90,7 +139,7 @@ const MenuSection = () => {
             >
               <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
                 {currentCategory.subcategories.map((sub) => (
-                                  <TabsTrigger
+                  <TabsTrigger
                     key={sub.id}
                     value={sub.id}
                     className={`flex items-center px-5 py-2.5 rounded-full transition-all duration-200
